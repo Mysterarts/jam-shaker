@@ -1,1 +1,0 @@
-Bienvenu à l'accueil
