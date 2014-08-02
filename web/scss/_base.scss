@@ -1,0 +1,314 @@
+
+/***
+ *     /$$$$$$$   /$$$$$$   /$$$$$$  /$$$$$$$$
+ *    | $$__  $$ /$$__  $$ /$$__  $$| $$_____/
+ *    | $$  \ $$| $$  \ $$| $$  \__/| $$
+ *    | $$$$$$$ | $$$$$$$$|  $$$$$$ | $$$$$
+ *    | $$__  $$| $$__  $$ \____  $$| $$__/
+ *    | $$  \ $$| $$  | $$ /$$  \ $$| $$
+ *    | $$$$$$$/| $$  | $$|  $$$$$$/| $$$$$$$$
+ *    |_______/ |__/  |__/ \______/ |________/
+ *
+ */
+
+* {
+	@include box-sizing(border-box); // les paddings des blocs ne sont pas pris en compte dans la taille des éléments
+}
+
+body {
+	background-color: $gris;
+	font-family: $basefont;
+	line-height: 1.4em;
+	@include font-size(12);
+	color: $text;
+
+}
+
+a{
+	text-decoration: none;
+	color: $text;
+}
+
+.titre-1{
+
+	font-family: $titre-1;
+	color: $violet;
+	text-transform: uppercase;
+	padding-left: 20px;
+	padding-bottom: 20px;
+	@include font-size(24);
+	line-height: 1.2em;
+
+	@include respond-min($m768) {
+		@include font-size(26);
+		width: 40%;
+	}
+
+	@include respond-min($m1200) {
+		@include font-size(28);
+	}
+}
+
+.titre-2{
+	font-family: $titre-2;
+	color: $violet;
+	padding-left: 20px;
+	padding-bottom: 30px;
+	@include font-size(16);
+	line-height: 1.2em;
+
+	@include respond-min($m768) {
+		@include font-size(18);
+		width: 40%;
+	}
+
+	@include respond-min($m1200) {
+		@include font-size(20);
+	}
+}
+
+.conteneur-global{
+	position: relative;
+	width: 100%;
+	padding-top: 50px;
+}
+
+.contains{
+	position: relative;
+	width: 100%;
+	height: 100%;
+
+	@include respond-min($m768) {
+		width: 700px;
+		margin: 0px auto;
+	}
+
+	@include respond-min($m900) {
+		width: 800px;
+	}
+
+	@include respond-min($m1024) {
+		width: 900px;
+	}
+
+	@include respond-min($m1200) {
+		width: 1000px;
+	}
+
+	@include respond-min($m1400) {
+		width: 1200px;
+	}
+}
+
+
+/***
+ *     /$$   /$$ /$$$$$$$$  /$$$$$$  /$$$$$$$  /$$$$$$$$ /$$$$$$$ 
+ *    | $$  | $$| $$_____/ /$$__  $$| $$__  $$| $$_____/| $$__  $$
+ *    | $$  | $$| $$      | $$  \ $$| $$  \ $$| $$      | $$  \ $$
+ *    | $$$$$$$$| $$$$$   | $$$$$$$$| $$  | $$| $$$$$   | $$$$$$$/
+ *    | $$__  $$| $$__/   | $$__  $$| $$  | $$| $$__/   | $$__  $$
+ *    | $$  | $$| $$      | $$  | $$| $$  | $$| $$      | $$  \ $$
+ *    | $$  | $$| $$$$$$$$| $$  | $$| $$$$$$$/| $$$$$$$$| $$  | $$
+ *    |__/  |__/|________/|__/  |__/|_______/ |________/|__/  |__/
+ *                                                                
+ *                                                                
+ *                                                                
+ */
+
+.header{
+	position: relative;
+	width: 100%;
+	// min-height: 200px - 70px;
+	padding-top : 70px;
+	background-color: $violet;
+
+	@include respond-min($m768) {
+		height: 300px;
+		background: transparent image-url('bg-events.jpg') no-repeat bottom center;
+		-webkit-background-size: cover;
+		background-size: cover;
+	}
+	
+}
+
+/***
+ *     /$$                              
+ *    | $$                              
+ *    | $$  /$$$$$$   /$$$$$$   /$$$$$$ 
+ *    | $$ /$$__  $$ /$$__  $$ /$$__  $$
+ *    | $$| $$  \ $$| $$  \ $$| $$  \ $$
+ *    | $$| $$  | $$| $$  | $$| $$  | $$
+ *    | $$|  $$$$$$/|  $$$$$$$|  $$$$$$/
+ *    |__/ \______/  \____  $$ \______/ 
+ *                   /$$  \ $$          
+ *                  |  $$$$$$/          
+ *                   \______/           
+ */
+
+.logo-jamshaker{
+
+	display: block;
+	width: 100%;
+	height: 73px;
+	margin-bottom: 20px;
+	background: transparent image-url('logo-jamshaker-s.png') no-repeat center center;
+	text-indent: -9999px;
+	z-index: 2;
+
+	@include respond-min($m768) {
+		background-image: url(../img/logo-jamshaker.png);
+		width: 280px;
+		height: 113px;
+		margin-bottom: 0;
+		top :100px;
+	}
+
+}
+
+/***
+ *                                   
+ *                                   
+ *     /$$$$$$$   /$$$$$$  /$$    /$$
+ *    | $$__  $$ |____  $$|  $$  /$$/
+ *    | $$  \ $$  /$$$$$$$ \  $$/$$/ 
+ *    | $$  | $$ /$$__  $$  \  $$$/  
+ *    | $$  | $$|  $$$$$$$   \  $/   
+ *    |__/  |__/ \_______/    \_/    
+ *                                   
+ *                                   
+ *                                   
+ */
+
+ .contain-nav{
+ 	@include respond-min($m768) {
+
+		position: absolute;
+		bottom: 0;
+	}
+ }
+
+.nav-main{
+
+	position: relative;
+	width: 100%;
+
+	li{
+		width: 100%;
+
+		@include respond-min($m768) {
+			width: inherit;
+			display: inline-block;
+			float: left;
+		}
+
+		a{
+			display: block;
+			background-color: lighten($gris-fonce,10%);
+			color: $violet;
+			text-transform: uppercase;
+			text-align: center;
+			padding: 10px 0;
+			border-bottom: 1px $gris-fonce solid;
+
+			@include transition(background-color 0.3s ease-in-out, color 0.3s ease-in-out);
+
+			&:hover, &:focus, &:active, &.selected {
+				color: $gris;
+				background-color: darken($violet, 2%);
+
+				@include respond-min($m768){
+					background-color: $violet;
+				}
+			}
+
+			@include respond-min($m768){
+				padding: 10px 20px;
+				text-align: left;
+				border-bottom: none;
+				background-color: $gris;
+			}
+		}
+	}
+}
+
+/***
+ *     /$$$$$$$$ /$$    /$$ /$$$$$$$$ /$$   /$$ /$$$$$$$$  /$$$$$$ 
+ *    | $$_____/| $$   | $$| $$_____/| $$$ | $$|__  $$__/ /$$__  $$
+ *    | $$      | $$   | $$| $$      | $$$$| $$   | $$   | $$  \__/
+ *    | $$$$$   |  $$ / $$/| $$$$$   | $$ $$ $$   | $$   |  $$$$$$ 
+ *    | $$__/    \  $$ $$/ | $$__/   | $$  $$$$   | $$    \____  $$
+ *    | $$        \  $$$/  | $$      | $$\  $$$   | $$    /$$  \ $$
+ *    | $$$$$$$$   \  $/   | $$$$$$$$| $$ \  $$   | $$   |  $$$$$$/
+ *    |________/    \_/    |________/|__/  \__/   |__/    \______/ 
+ *                                                                 
+ *                                                                 
+ *                                                                 
+ */
+
+.info{
+	position: relative;
+	width: 100%;
+	background-color: $violet;
+	padding: 40px;
+
+	&:after{
+		display: table;
+		content : "";
+		clear: both;
+	}
+
+
+	@include respond-min($m768){
+		position: absolute;
+		top: 0;
+		right: 0;
+		width: 50%;
+	}
+
+	.date, .horaire{
+		color: $gris;
+		@include font-size(16);
+		line-height: 1.5em;
+
+		@include respond-min($m480){
+			float: left;
+			width: 50%;
+		}
+
+		@include respond-min($m768){
+			float: none;
+			width: 100%;
+		}
+	}
+
+	.date{
+		padding-bottom: 15px;
+	}
+
+	// .horaire:after {
+	// 	display: table;
+	// 	content : "";
+	// 	clear: both;
+	// }
+
+	.icon-clock{
+		float: left;
+	}
+
+	.p-horaire{
+		display: block;
+		float: left;
+	}
+}
+
+.map{
+	position: relative;
+	width: 100%;
+	height: 250px;
+}
+
+.description{
+	padding: 25px;
+	color: $violet;
+	@include font-size(14);
+}
