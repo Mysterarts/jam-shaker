@@ -25,4 +25,15 @@
 	<div class="contains description">
 		<p>{$core->Place.descr}</p>
 	</div>
+
+	<div class="contains">
+		<div class="schema">
+			<canvas id="doughnut" width="300" height="300" />
+			<input type="hidden" id="gd-nb" value="10">
+			<input type="hidden" id="prog-nb" value="20">
+			<input type="hidden" id="graph-nb" value="30">
+			<input type="hidden" id="son-nb" value="10">
+		</div>
+	</div>
+
 {/if}

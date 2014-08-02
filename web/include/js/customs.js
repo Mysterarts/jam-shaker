@@ -128,4 +128,45 @@ $(document).ready(function() {
 		});
 	}
 
+	// Doughnut
+
+	if($("#doughnut").length > 0) {
+
+		var $gd = $("#gd-nb");
+		var $prog = $("#prog-nb");
+		var $graph = $("#graph-nb");
+		var $son = $("#son-nb");
+
+		var doughnutData = [
+			{
+				value: parseInt($gd.val()),
+				color:"#F7464A",
+				highlight: "#FF5A5E",
+				label: "GD"
+			},
+			{
+				value: parseInt($prog.val()),
+				color: "#46BFBD",
+				highlight: "#5AD3D1",
+				label: "Prog"
+			},
+			{
+				value: parseInt($graph.val()),
+				color: "#FDB45C",
+				highlight: "#FFC870",
+				label: "Graph"
+			},
+			{
+				value: parseInt($son.val()),
+				color: "#949FB1",
+				highlight: "#A8B3C5",
+				label: "Son"
+			}
+
+		];
+
+		var ctx = document.getElementById("doughnut").getContext("2d");
+		window.myDoughnut = new Chart(ctx).Doughnut(doughnutData);
+	}
+
 });

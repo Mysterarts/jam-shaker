@@ -30,7 +30,7 @@ switch($content) {
 	case "event":
 		$meta["title"] = "Jam Shaker - Évènement - Event";
 		$meta["description"] = "Jam Shaker - Évènement - Event ?";
-		$meta["keywords"] = "Jam Shaker - Évènement - Event !";
+		$meta["keywords"] = "Jam Shaker - Évènement - Event";
 		$content = "event";
 
 		$event = null;
