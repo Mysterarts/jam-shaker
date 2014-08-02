@@ -12,6 +12,8 @@ Options +FollowSymlinks
 RewriteEngine on
 
 # Pages
+RewriteRule ^(events)/$ index.php?content=$1 [QSA,L]
+
 RewriteRule ^(event)/([^/]+)/$ index.php?content=$1&event=$2 [QSA,L]
 RewriteRule ^(event)/([^/]+)/([^/]+)/$ index.php?content=$1&event=$2&place=$3 [QSA,L]
 # RewriteRule ^(.*[^\/]).html$ index.php?content=$1 [QSA,L]

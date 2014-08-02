@@ -27,6 +27,21 @@ if(isset($_GET['content'])){
 
 switch($content) {
 
+	case "events":
+		$meta["title"] = "Jam Shaker - Évènements - Events";
+		$meta["description"] = "Jam Shaker - Évènements - Events";
+		$meta["keywords"] = "Jam Shaker - Évènements - Events";
+		$content = "events";
+
+		$sQuery = 'SELECT * FROM js_events ORDER BY date_start DESC';
+		$mysql_rs = mysql_query($sQuery, $mysql_ressource) or die(mysql_error());
+		$core->Events = array();
+		while($aRow = mysql_fetch_array($mysql_rs)){
+			array_push($core->Events, $aRow);
+		}
+
+	break;
+
 	case "event":
 		$meta["title"] = "Jam Shaker - Évènement - Event";
 		$meta["description"] = "Jam Shaker - Évènement - Event ?";
@@ -45,7 +60,7 @@ switch($content) {
 		if(mysql_num_rows($mysql_rs) > 0){
 			$core->Event = mysql_fetch_array($mysql_rs);
 		}else{
-			//Si aucun event, afficher un contenu spécial dans le template
+			//Si aucune place, afficher une erreur (voir le template event)
 			$core->EmptyDisplay = true;
 		}
 
@@ -62,8 +77,17 @@ switch($content) {
 		if(mysql_num_rows($mysql_rs) > 0){
 			$core->Place = mysql_fetch_array($mysql_rs);
 		}else{
-			//Provisoir
-			$core->EmptyDisplay = true;
+			
+			//Si pas de place précisée, aller chercher la première place de cet event
+			$sQuery = 'SELECT * FROM js_places WHERE id_event="'.$event_id.'" LIMIT 0,1';
+			$mysql_rs = mysql_query($sQuery, $mysql_ressource) or die(mysql_error());
+
+			if(mysql_num_rows($mysql_rs) > 0){
+				$core->Place = mysql_fetch_array($mysql_rs);
+			}else{
+				//Si aucune place pour cet event, afficher une erreur (voir le template event)
+				$core->EmptyDisplay = true;
+			}
 		}
 
 	break;
