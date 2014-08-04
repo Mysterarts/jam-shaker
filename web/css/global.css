@@ -209,6 +209,85 @@ html {
     display: none;
   }
 }
+.hi-icon-wrap {
+  text-align: center;
+  margin: 0 auto;
+  display: table;
+  margin-bottom: 25px;
+  float: left;
+  width: 100%;
+}
+
+.contain-icon {
+  margin-right: 35px;
+  float: left;
+}
+
+.hi-icon {
+  display: inline-block;
+  font-size: 12px;
+  text-transform: uppercase;
+  cursor: pointer;
+  margin: 15px 30px;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  color: #2b0734;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.hi-icon:after {
+  pointer-events: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  content: '';
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+}
+
+/* Effect 1 */
+.hi-icon-effect-1 .hi-icon {
+  background: white;
+  -webkit-transition: background 0.2s, color 0.2s;
+  -moz-transition: background 0.2s, color 0.2s;
+  transition: background 0.2s, color 0.2s;
+}
+
+.hi-icon-effect-1 .hi-icon:after {
+  top: -7px;
+  left: -7px;
+  padding: 7px;
+  box-shadow: 0 0 0 4px white;
+  -webkit-transition: -webkit-transform 0.2s, opacity 0.2s;
+  -webkit-transform: scale(0.8);
+  -moz-transition: -moz-transform 0.2s, opacity 0.2s;
+  -moz-transform: scale(0.8);
+  -ms-transform: scale(0.8);
+  transition: transform 0.2s, opacity 0.2s;
+  transform: scale(0.8);
+  opacity: 0;
+}
+
+/* Effect 1a */
+.hi-icon-effect-1a .contain-icon .hi-icon:hover, .hi-icon-effect-1a .contain-icon .selected {
+  background-color: white;
+}
+
+.hi-icon-effect-1a .contain-icon .hi-icon:hover:after, .hi-icon-effect-1a .contain-icon .selected:after {
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+  opacity: 1;
+}
+
 /***
  *     /$$$$$$$   /$$$$$$   /$$$$$$  /$$$$$$$$
  *    | $$__  $$ /$$__  $$ /$$__  $$| $$_____/
@@ -287,6 +366,30 @@ a {
   }
 }
 
+.titre-3 {
+  font-family: "futuralt";
+  color: white;
+  font-size: 19px;
+  font-size: 1.9rem;
+  line-height: 1.2em;
+  text-transform: uppercase;
+  padding-left: 20px;
+  padding-bottom: 30px;
+}
+@media screen and (min-width: 768px) {
+  .titre-3 {
+    font-size: 22px;
+    font-size: 2.2rem;
+    width: 40%;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .titre-3 {
+    font-size: 25px;
+    font-size: 2.5rem;
+  }
+}
+
 .conteneur-global {
   position: relative;
   width: 100%;
@@ -347,7 +450,7 @@ a {
 @media screen and (min-width: 768px) {
   .header {
     height: 300px;
-    background: transparent url('../img/bg-events.jpg?1405525384') no-repeat bottom center;
+    background: transparent url('../img/bg-events.jpg?1407012215') no-repeat bottom center;
     -webkit-background-size: cover;
     background-size: cover;
   }
@@ -371,7 +474,7 @@ a {
   width: 100%;
   height: 73px;
   margin-bottom: 20px;
-  background: transparent url('../img/logo-jamshaker-s.png?1405634342') no-repeat center center;
+  background: transparent url('../img/logo-jamshaker-s.png?1407012215') no-repeat center center;
   text-indent: -9999px;
   z-index: 2;
 }
@@ -463,6 +566,19 @@ a {
  *                                                                 
  *                                                                 
  */
+/***
+ *     /$$$$$$$$ /$$    /$$ /$$$$$$$$ /$$   /$$ /$$$$$$$$  
+ *    | $$_____/| $$   | $$| $$_____/| $$$ | $$|__  $$__/ 
+ *    | $$      | $$   | $$| $$      | $$$$| $$   | $$  
+ *    | $$$$$   |  $$ / $$/| $$$$$   | $$ $$ $$   | $$  
+ *    | $$__/    \  $$ $$/ | $$__/   | $$  $$$$   | $$   
+ *    | $$        \  $$$/  | $$      | $$\  $$$   | $$  
+ *    | $$$$$$$$   \  $/   | $$$$$$$$| $$ \  $$   | $$  
+ *    |________/    \_/    |________/|__/  \__/   |__/ 
+ *                                                                 
+ *                                                                 
+ *                                                                 
+ */
 .info {
   position: relative;
   width: 100%;
@@ -522,4 +638,97 @@ a {
   color: #2b0734;
   font-size: 14px;
   font-size: 1.4rem;
+}
+
+.graphics {
+  padding: 20px 0;
+}
+.graphics:after {
+  display: table;
+  content: "";
+  clear: both;
+}
+.graphics .schema-doughnut {
+  width: 100%;
+}
+@media screen and (min-width: 900px) {
+  .graphics .schema-doughnut {
+    float: left;
+    width: 50%;
+  }
+}
+.graphics .schema-doughnut .doughnut {
+  display: block;
+  margin: 0 auto;
+}
+.graphics .schema-bar {
+  width: 100%;
+}
+@media screen and (min-width: 900px) {
+  .graphics .schema-bar {
+    float: right;
+    width: 50%;
+  }
+}
+.graphics .schema-bar .bar {
+  display: block;
+  margin: 0 auto;
+}
+
+.bloc-formulaire {
+  background-color: #2b0734;
+  padding: 30px 0;
+}
+
+.inscription-event {
+  position: relative;
+  width: 100%;
+}
+.inscription-event:after {
+  display: table;
+  content: "";
+  clear: both;
+}
+.inscription-event .form-bloc-g {
+  float: left;
+  width: 50%;
+}
+.inscription-event .form-bloc-d {
+  float: left;
+  width: 50%;
+}
+
+.input-inscription {
+  color: #2b0734;
+  font-family: "futuralt", sans-serif;
+  background-color: white;
+  border: none;
+  padding: 8px 3px;
+  width: 80%;
+  margin-bottom: 10px;
+  -webkit-transition: background 0.2s ease-in-out;
+  -moz-transition: background 0.2s ease-in-out;
+  -o-transition: background 0.2s ease-in-out;
+  transition: background 0.2s ease-in-out;
+}
+.input-inscription:hover, .input-inscription:focus, .input-inscription:active {
+  background-color: #d5d3d5;
+}
+
+.btn-envoi {
+  cursor: pointer;
+  width: 80%;
+  border: none;
+  height: 60px;
+  color: #2b0734;
+  font-family: "futuralt", sans-serif;
+  text-transform: uppercase;
+  background-color: white;
+  -webkit-transition: background 0.2s ease-in-out;
+  -moz-transition: background 0.2s ease-in-out;
+  -o-transition: background 0.2s ease-in-out;
+  transition: background 0.2s ease-in-out;
+}
+.btn-envoi:hover, .btn-envoi:focus, .btn-envoi:active {
+  background-color: #d5d3d5;
 }

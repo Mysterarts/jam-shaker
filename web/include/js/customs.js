@@ -34,6 +34,8 @@ var nav = responsiveNav(".nav-main", { // Selector
 
 $(document).ready(function() {
 
+	//EVENT : MAP
+
 	if($("#map").length > 0) {
 
 
@@ -128,7 +130,7 @@ $(document).ready(function() {
 		});
 	}
 
-	// Doughnut
+	// EVENT : DOUGHNUT
 
 	if($("#doughnut").length > 0) {
 
@@ -140,26 +142,26 @@ $(document).ready(function() {
 		var doughnutData = [
 			{
 				value: parseInt($gd.val()),
-				color:"#F7464A",
-				highlight: "#FF5A5E",
+				color:"#df4949",
+				highlight: "#fa5353",
 				label: "GD"
 			},
 			{
 				value: parseInt($prog.val()),
-				color: "#46BFBD",
-				highlight: "#5AD3D1",
+				color: "#e27a3f",
+				highlight: "#fb8847",
 				label: "Prog"
 			},
 			{
 				value: parseInt($graph.val()),
-				color: "#FDB45C",
-				highlight: "#FFC870",
+				color: "#efc94c",
+				highlight: "#fbda6c",
 				label: "Graph"
 			},
 			{
 				value: parseInt($son.val()),
-				color: "#949FB1",
-				highlight: "#A8B3C5",
+				color: "#45b29d",
+				highlight: "#50cbb3",
 				label: "Son"
 			}
 
@@ -167,6 +169,48 @@ $(document).ready(function() {
 
 		var ctx = document.getElementById("doughnut").getContext("2d");
 		window.myDoughnut = new Chart(ctx).Doughnut(doughnutData);
+	}
+
+	// EVENT : BAR
+
+	if($("#bar").length > 0) {
+
+		var randomScalingFactor = function(){ return Math.round(Math.random()*100)};
+
+		var barChartData = {
+			labels : ["Prog-Graph","Graph-Gd","Prog-Gd","Son-Graph","Son-Prog","Son-Gd"],
+			datasets : [
+				{
+					fillColor : "rgba(43,7,53,0.5)",
+					strokeColor : "rgba(43,7,53,0.6)",
+					highlightFill: "rgba(43,7,53,0.75)",
+					highlightStroke: "rgba(43,7,53,8)",
+					data : [randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor()]
+				}
+			]
+		}
+
+		var ctx = document.getElementById("bar").getContext("2d");
+		window.myBar = new Chart(ctx).Bar(barChartData);
+
+	}
+
+	//EVENT : FORMULAIRE
+	if($("#inscription-event").length > 0){
+
+		var $icon_form = $(".hi-icon");
+
+		$icon_form.click(function(e){
+
+			e.preventDefault();
+			if( $(this).hasClass('selected') ){
+				$(this).removeClass('selected');
+			}else{
+				$(this).addClass('selected');
+
+			}
+		});
+
 	}
 
 });

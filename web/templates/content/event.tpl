@@ -26,13 +26,43 @@
 		<p>{$core->Place.descr}</p>
 	</div>
 
-	<div class="contains">
-		<div class="schema">
-			<canvas id="doughnut" width="300" height="300" />
+	<div class="contains graphics">
+		<div class="schema-doughnut">
+			<canvas id="doughnut" class="doughnut" width="300" height="300" />
 			<input type="hidden" id="gd-nb" value="10">
 			<input type="hidden" id="prog-nb" value="20">
 			<input type="hidden" id="graph-nb" value="30">
 			<input type="hidden" id="son-nb" value="10">
+		</div>
+
+		<div class="schema-bar">
+			<canvas id="bar" class="bar" width="400" height="300"/>
+		</div>
+
+	</div>
+
+	<div class="bloc-formulaire">
+		<div class="contains">
+			<h3 class="titre-3">Inscription</h3>
+			<form action="#" name="inscription-event" class="inscription-event" id="inscription-event">
+
+				<div class="form-bloc-g">
+					<input type="text" class="input-inscription validate[required]" id="nom" placeholder="Nom" name="nom">
+					<input type="text" class="input-inscription validate[required]" id="prenom" placeholder="Prénom" name="prenom">
+					<input type="text" class="input-inscription validate[required]" id="email" placeholder="Mail" name="email">
+					<input type="text" class="input-inscription validate[required]" id="tel" placeholder="Téléphone" name="tel">
+				</div>
+				<div class="form-bloc-d">
+					<div class="hi-icon-wrap hi-icon-effect-1 hi-icon-effect-1a">
+						<div class="contain-icon"><a class="hi-icon">GD</a></div>
+						<div class="contain-icon"><a class="hi-icon">Prog</a></div>
+						<div class="contain-icon"><a class="hi-icon">Graph</a></div>
+						<div class="contain-icon"><a class="hi-icon">Son</a></div>
+					</div>
+					<input type="submit" id="envoi" class="btn-envoi" value="Envoyer">
+				</div>
+
+			</form>
 		</div>
 	</div>
 

@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.16, created on 2014-03-15 11:32:35
+<?php /* Smarty version Smarty-3.1.16, created on 2014-08-02 23:17:49
          compiled from "./templates/commun/footer.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:190727316153242821db2077-91990625%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '7229217119bd54c957751ef8b6960d4a1d267c16' => 
     array (
       0 => './templates/commun/footer.tpl',
-      1 => 1394879547,
+      1 => 1407012215,
       2 => 'file',
     ),
   ),
