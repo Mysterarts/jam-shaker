@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.16, created on 2014-08-05 00:17:21
+<?php /* Smarty version Smarty-3.1.16, created on 2014-08-06 17:57:51
          compiled from "./templates/content/event.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:99805715353dbae7557df91-48043469%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '8f9c8d09ac0d5fd85e9c85a3bcf6f4f5f2230f6c' => 
     array (
       0 => './templates/content/event.tpl',
-      1 => 1407190640,
+      1 => 1407340669,
       2 => 'file',
     ),
   ),
@@ -61,14 +61,18 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 	<div class="contains graphics">
 		<div class="schema-doughnut">
 			<canvas id="doughnut" class="doughnut" width="300" height="300" />
-			<input type="hidden" id="gd-nb" value="10">
-			<input type="hidden" id="prog-nb" value="20">
-			<input type="hidden" id="graph-nb" value="30">
-			<input type="hidden" id="son-nb" value="10">
+			<input type="hidden" id="gd-nb" value="<?php echo $_smarty_tpl->tpl_vars['core']->value->Nb_Participant['gd']['GD_total'];?>
+">
+			<input type="hidden" id="prog-nb" value="<?php echo $_smarty_tpl->tpl_vars['core']->value->Nb_Participant['prog']['PROG_total'];?>
+">
+			<input type="hidden" id="graph-nb" value="<?php echo $_smarty_tpl->tpl_vars['core']->value->Nb_Participant['graph']['GRAPH_total'];?>
+">
+			<input type="hidden" id="son-nb" value="<?php echo $_smarty_tpl->tpl_vars['core']->value->Nb_Participant['son']['SON_total'];?>
+">
 		</div>
 
 		<div class="schema-bar">
-			<canvas id="bar" class="bar" width="400" height="300"/>
+			<canvas id="bar" class="bar" width="300" height="300"/>
 		</div>
 
 	</div>
@@ -79,18 +83,20 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 			<form action="#" name="inscription-event" class="inscription-event" id="inscription-event">
 
 				<div class="form-bloc-g">
-					<input type="text" class="input-inscription validate[required]" id="nom" placeholder="Nom" name="nom">
-					<input type="text" class="input-inscription validate[required]" id="prenom" placeholder="Prénom" name="prenom">
-					<input type="text" class="input-inscription validate[required]" id="email" placeholder="Mail" name="email">
-					<input type="text" class="input-inscription validate[required]" id="tel" placeholder="Téléphone" name="tel">
+					<input type="text" class="input-inscription" id="nom" placeholder="Nom et prénom" name="nom" value="">
+					<input type="text" class="input-inscription" id="email" placeholder="Mail" name="email" value="">
+					<input type="text" class="input-inscription" id="tel" placeholder="Téléphone" name="tel" value="">
+					<input type="text" class="input-inscription" id="experience" placeholder="Expérience (pro + nombre de jams)" name="experience" value="">
 				</div>
 				<div class="form-bloc-d">
 					<div class="hi-icon-wrap hi-icon-effect-1 hi-icon-effect-1a">
-						<div class="contain-icon"><a class="hi-icon">GD</a></div>
-						<div class="contain-icon"><a class="hi-icon">Prog</a></div>
-						<div class="contain-icon"><a class="hi-icon">Graph</a></div>
-						<div class="contain-icon"><a class="hi-icon">Son</a></div>
+						<div class="contain-icon"><a class="hi-icon" id="gd" >GD</a></div>
+						<div class="contain-icon"><a class="hi-icon" id="prog" >Prog</a></div>
+						<div class="contain-icon"><a class="hi-icon" id="graph" >Graph</a></div>
+						<div class="contain-icon"><a class="hi-icon" id="son" >Son</a></div>
 					</div>
+					<input type="hidden" id="place" value="<?php echo $_smarty_tpl->tpl_vars['core']->value->Place['id'];?>
+">
 					<input type="submit" id="envoi" class="btn-envoi" value="Envoyer">
 				</div>
 

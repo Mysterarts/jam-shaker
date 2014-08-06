@@ -1,16 +1,52 @@
 .hi-icon-wrap {
 	text-align: center;
-	margin: 0 auto;
+	margin: 20px auto;
 	// padding: 2em 0 3em;
-	display: table;
-	margin-bottom: 25px;
-	float: left;
 	width: 100%;
+	position: relative;
+	&:after{
+		display: table;
+		content : "";
+		clear: both;
+	}
+
+	@include respond-min($m768) {
+		width: 90%;
+		float: right;
+		margin: 0 auto;
+		margin-bottom: 30px;
+	}
 }
 
 .contain-icon{
-	margin-right: 35px;
 	float: left;
+	display: table; // Pour centrer verticalement le texte à l'intérieur des ronds
+	width: 25%;
+
+	&:last-of-type{
+		margin-right: 0;
+	}
+
+	@include respond-min($m768) {
+		width: auto;
+		margin-right: 25px;
+	}
+
+	@include respond-min($m900) {
+		margin-right: 26px;  // Ex : (800/2) = 400. 400*0,9 =360. margin-right = (360-(70*4))/3
+	}
+
+	@include respond-min($m1024) {
+		margin-right: 40px;
+	}
+
+	@include respond-min($m1200) {
+		margin-right: 55px;
+	}
+
+	@include respond-min($m1400) {
+		margin-right: 85px;
+	}
 }
 
 .hi-icon {
@@ -18,17 +54,33 @@
 	font-size: 12px;
 	text-transform: uppercase;
 	cursor: pointer;
-	margin: 15px 30px;
-	width: 70px;
-	height: 70px;
+	margin: 0 auto;
+	width: 60px;
+	height: 60px;
 	border-radius: 50%;
 	text-align: center;
 	position: relative;
 	z-index: 1;
 	color: $violet;
+	line-height: 60px; // Pour centrer verticalement le texte : on écrit la même hauteur que la hauteur du rond
+	// padding-top: 22px;
 
-	display: table-cell;
-	vertical-align: middle;
+	@include respond-min($m768) {
+
+		// Pour centrer verticalement le texte
+		display: table-cell;
+		vertical-align: middle;
+
+		padding-top: 0;
+		margin: 15px 30px;
+		width: 60px;
+		height: 60px;
+	}
+
+	@include respond-min($m900) {
+		width: 70px;
+		height: 70px;
+	}
 }
 
 .hi-icon:after {
@@ -62,13 +114,18 @@
 	-webkit-transition: background 0.2s, color 0.2s;
 	-moz-transition: background 0.2s, color 0.2s;
 	transition: background 0.2s, color 0.2s;
+
+	&.error{
+		background-color:#fab2bb;
+		color: #75121e;
+	}
 }
 
 .hi-icon-effect-1 .hi-icon:after {
-	top: -7px;
-	left: -7px;
-	padding: 7px;
-	box-shadow: 0 0 0 4px $blanc;
+	top: -4px;
+	left: -4px;
+	padding: 4px;
+	box-shadow: 0 0 0 3px $blanc;
 	-webkit-transition: -webkit-transform 0.2s, opacity 0.2s;
 	-webkit-transform: scale(.8);
 	-moz-transition: -moz-transform 0.2s, opacity 0.2s;
@@ -77,6 +134,14 @@
 	transition: transform 0.2s, opacity 0.2s;
 	transform: scale(.8);
 	opacity: 0;
+
+	@include respond-min($m768) {
+
+		top: -7px;
+		left: -7px;
+		padding: 7px;
+		box-shadow: 0 0 0 4px $blanc;
+	}
 }
 
 /* Effect 1a */

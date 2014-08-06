@@ -53,11 +53,14 @@
 
 	<script type="text/javascript" src="include/js/jquery-1.11.0.min.js"></script>
 	<script type="text/javascript" src="include/js/jquery.plugins.js"></script>
+
 	<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
 	<script type="text/javascript" src="include/js/gmaps.js"></script>
+
 	<script type="text/javascript" src="include/js/jquery.mousewheel.js"></script>
 	<script type="text/javascript" src="include/js/mwheelIntent.js"></script>
 
+	<script type="text/javascript" src="include/js/form.js"></script>
 	<script type="text/javascript" src="include/js/customs.js"></script>
 
 	<script type="text/javascript">

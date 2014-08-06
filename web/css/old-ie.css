@@ -219,16 +219,32 @@ html {
 }
 .hi-icon-wrap {
   text-align: center;
-  margin: 0 auto;
-  display: table;
-  margin-bottom: 25px;
-  float: left;
+  margin: 20px auto;
   width: 100%;
+  position: relative;
+  width: 90%;
+  float: right;
+  margin: 0 auto;
+  margin-bottom: 30px;
+}
+.hi-icon-wrap:after {
+  display: table;
+  content: "";
+  clear: both;
 }
 
 .contain-icon {
-  margin-right: 35px;
   float: left;
+  display: table;
+  width: 25%;
+  width: auto;
+  margin-right: 25px;
+  margin-right: 26px;
+  margin-right: 40px;
+  margin-right: 55px;
+}
+.contain-icon:last-of-type {
+  margin-right: 0;
 }
 
 .hi-icon {
@@ -236,16 +252,23 @@ html {
   font-size: 12px;
   text-transform: uppercase;
   cursor: pointer;
-  margin: 15px 30px;
-  width: 70px;
-  height: 70px;
+  margin: 0 auto;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
   text-align: center;
   position: relative;
   z-index: 1;
   color: #2b0734;
+  line-height: 60px;
   display: table-cell;
   vertical-align: middle;
+  padding-top: 0;
+  margin: 15px 30px;
+  width: 60px;
+  height: 60px;
+  width: 70px;
+  height: 70px;
 }
 
 .hi-icon:after {
@@ -267,12 +290,16 @@ html {
   -moz-transition: background 0.2s, color 0.2s;
   transition: background 0.2s, color 0.2s;
 }
+.hi-icon-effect-1 .hi-icon.error {
+  background-color: #fab2bb;
+  color: #75121e;
+}
 
 .hi-icon-effect-1 .hi-icon:after {
-  top: -7px;
-  left: -7px;
-  padding: 7px;
-  box-shadow: 0 0 0 4px white;
+  top: -4px;
+  left: -4px;
+  padding: 4px;
+  box-shadow: 0 0 0 3px white;
   -webkit-transition: -webkit-transform 0.2s, opacity 0.2s;
   -webkit-transform: scale(0.8);
   -moz-transition: -moz-transform 0.2s, opacity 0.2s;
@@ -281,6 +308,10 @@ html {
   transition: transform 0.2s, opacity 0.2s;
   transform: scale(0.8);
   opacity: 0;
+  top: -7px;
+  left: -7px;
+  padding: 7px;
+  box-shadow: 0 0 0 4px white;
 }
 
 /* Effect 1a */
@@ -327,11 +358,25 @@ a {
   color: black;
 }
 
+/***
+ *       /$$     /$$   /$$                        
+ *      | $$    |__/  | $$                        
+ *     /$$$$$$   /$$ /$$$$$$    /$$$$$$   /$$$$$$ 
+ *    |_  $$_/  | $$|_  $$_/   /$$__  $$ /$$__  $$
+ *      | $$    | $$  | $$    | $$  \__/| $$$$$$$$
+ *      | $$ /$$| $$  | $$ /$$| $$      | $$_____/
+ *      |  $$$$/| $$  |  $$$$/| $$      |  $$$$$$$
+ *       \___/  |__/   \___/  |__/       \_______/
+ *                                                
+ *                                                
+ *                                                
+ */
 .titre-1 {
   font-family: "futuralt-heavy";
   color: #2b0734;
   text-transform: uppercase;
   padding-left: 20px;
+  padding-right: 20px;
   padding-bottom: 20px;
   font-size: 24px;
   font-size: 2.4rem;
@@ -365,15 +410,30 @@ a {
   font-size: 1.9rem;
   line-height: 1.2em;
   text-transform: uppercase;
-  padding-left: 20px;
   padding-bottom: 30px;
+  width: 90%;
+  margin: 0 auto;
   font-size: 22px;
   font-size: 2.2rem;
-  width: 40%;
+  width: 100%;
+  margin: 0;
   font-size: 25px;
   font-size: 2.5rem;
 }
 
+/***
+ *                                     /$$               /$$                    
+ *                                    | $$              |__/                    
+ *      /$$$$$$$  /$$$$$$  /$$$$$$$  /$$$$$$    /$$$$$$  /$$ /$$$$$$$   /$$$$$$$
+ *     /$$_____/ /$$__  $$| $$__  $$|_  $$_/   |____  $$| $$| $$__  $$ /$$_____/
+ *    | $$      | $$  \ $$| $$  \ $$  | $$      /$$$$$$$| $$| $$  \ $$|  $$$$$$ 
+ *    | $$      | $$  | $$| $$  | $$  | $$ /$$ /$$__  $$| $$| $$  | $$ \____  $$
+ *    |  $$$$$$$|  $$$$$$/| $$  | $$  |  $$$$/|  $$$$$$$| $$| $$  | $$ /$$$$$$$/
+ *     \_______/ \______/ |__/  |__/   \___/   \_______/|__/|__/  |__/|_______/ 
+ *                                                                              
+ *                                                                              
+ *                                                                              
+ */
 .conteneur-global {
   position: relative;
   width: 100%;
@@ -508,6 +568,103 @@ a {
  *                                                                 
  */
 /***
+*                                   
+*                                   
+*     /$$$$$$$   /$$$$$$  /$$    /$$
+*    | $$__  $$ |____  $$|  $$  /$$/
+*    | $$  \ $$  /$$$$$$$ \  $$/$$/ 
+*    | $$  | $$ /$$__  $$  \  $$$/  
+*    | $$  | $$|  $$$$$$$   \  $/   
+*    |__/  |__/ \_______/    \_/    
+*                                   
+*                                   
+*                                   
+*/
+.second-nav {
+  position: relative;
+  margin: 0 auto 20px auto;
+  width: 90%;
+  width: 100%;
+}
+.second-nav:after {
+  display: table;
+  content: "";
+  clear: both;
+}
+
+.nav-events {
+  float: right;
+}
+.nav-events li {
+  display: inline-block;
+  float: left;
+}
+.nav-events li:first-of-type {
+  margin-right: 10px;
+}
+.nav-events li a {
+  display: block;
+  padding: 15px 15px;
+  background-color: #bdbbbd;
+  color: white;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-size: 1.2rem;
+  font-family: "futuralt", sans-serif;
+  -webkit-transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+  -moz-transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+  -o-transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+.nav-events li a:hover, .nav-events li a:focus, .nav-events li a:active, .nav-events li a.selected {
+  color: #eeedee;
+  background-color: #2b0734;
+}
+
+.contain-events {
+  margin-bottom: 30px;
+}
+
+.liste_events {
+  position: relative;
+  display: block;
+  outline: 0;
+  background-color: #dad8da;
+  padding: 20px 0;
+  border-left: 4px solid #dad8da;
+  margin-bottom: 20px;
+  overflow: hidden;
+  -webkit-transition: border-color 0.3s ease-in-out, color 0.3s ease-in-out;
+  -moz-transition: border-color 0.3s ease-in-out, color 0.3s ease-in-out;
+  -o-transition: border-color 0.3s ease-in-out, color 0.3s ease-in-out;
+  transition: border-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+.liste_events:after {
+  display: table;
+  content: "";
+  clear: both;
+}
+.liste_events:last-of-type {
+  margin-bottom: 0;
+}
+.liste_events:hover {
+  border-color: #2b0734;
+}
+.liste_events .titre-1 {
+  width: 80%;
+}
+.liste_events .info_sup {
+  padding-left: 20px;
+}
+.liste_events .info_sup p {
+  color: #2b0734;
+  font-size: 15px;
+  font-size: 1.5rem;
+  line-height: 1.5em;
+  font-family: "futuralt-light";
+}
+
+/***
  *     /$$$$$$$$ /$$    /$$ /$$$$$$$$ /$$   /$$ /$$$$$$$$  
  *    | $$_____/| $$   | $$| $$_____/| $$$ | $$|__  $$__/ 
  *    | $$      | $$   | $$| $$      | $$$$| $$   | $$  
@@ -519,6 +676,32 @@ a {
  *                                                                 
  *                                                                 
  *                                                                 
+ */
+/***
+ *     /$$            /$$$$$$                                                             
+ *    |__/           /$$__  $$                                                            
+ *     /$$ /$$$$$$$ | $$  \__/  /$$$$$$        /$$       /$$$$$$$   /$$$$$$  /$$$$$$/$$$$ 
+ *    | $$| $$__  $$| $$$$     /$$__  $$      |__/      | $$__  $$ /$$__  $$| $$_  $$_  $$
+ *    | $$| $$  \ $$| $$_/    | $$  \ $$                | $$  \ $$| $$  \ $$| $$ \ $$ \ $$
+ *    | $$| $$  | $$| $$      | $$  | $$       /$$      | $$  | $$| $$  | $$| $$ | $$ | $$
+ *    | $$| $$  | $$| $$      |  $$$$$$/      |__/      | $$  | $$|  $$$$$$/| $$ | $$ | $$
+ *    |__/|__/  |__/|__/       \______/                 |__/  |__/ \______/ |__/ |__/ |__/
+ *                                                                                        
+ *                                                                                        
+ *                                                                                        
+ */
+/***
+ *           /$$             /$$                           /$$       /$$                                     /$$                    
+ *          | $$            | $$                          /$$/      | $$                                    |__/                    
+ *      /$$$$$$$  /$$$$$$  /$$$$$$    /$$$$$$            /$$/       | $$$$$$$   /$$$$$$   /$$$$$$   /$$$$$$  /$$  /$$$$$$   /$$$$$$ 
+ *     /$$__  $$ |____  $$|_  $$_/   /$$__  $$          /$$/        | $$__  $$ /$$__  $$ /$$__  $$ |____  $$| $$ /$$__  $$ /$$__  $$
+ *    | $$  | $$  /$$$$$$$  | $$    | $$$$$$$$         /$$/         | $$  \ $$| $$  \ $$| $$  \__/  /$$$$$$$| $$| $$  \__/| $$$$$$$$
+ *    | $$  | $$ /$$__  $$  | $$ /$$| $$_____/        /$$/          | $$  | $$| $$  | $$| $$       /$$__  $$| $$| $$      | $$_____/
+ *    |  $$$$$$$|  $$$$$$$  |  $$$$/|  $$$$$$$       /$$/           | $$  | $$|  $$$$$$/| $$      |  $$$$$$$| $$| $$      |  $$$$$$$
+ *     \_______/ \_______/   \___/   \_______/      |__/            |__/  |__/ \______/ |__/       \_______/|__/|__/       \_______/
+ *                                                                                                                                  
+ *                                                                                                                                  
+ *                                                                                                                                  
  */
 .info {
   position: relative;
@@ -556,19 +739,58 @@ a {
   float: left;
 }
 
+/***
+ *                                      
+ *                                      
+ *     /$$$$$$/$$$$   /$$$$$$   /$$$$$$ 
+ *    | $$_  $$_  $$ |____  $$ /$$__  $$
+ *    | $$ \ $$ \ $$  /$$$$$$$| $$  \ $$
+ *    | $$ | $$ | $$ /$$__  $$| $$  | $$
+ *    | $$ | $$ | $$|  $$$$$$$| $$$$$$$/
+ *    |__/ |__/ |__/ \_______/| $$____/ 
+ *                            | $$      
+ *                            | $$      
+ *                            |__/      
+ */
 .map {
   position: relative;
   width: 100%;
   height: 250px;
 }
 
+/***
+ *           /$$                                         /$$             /$$     /$$                    
+ *          | $$                                        |__/            | $$    |__/                    
+ *      /$$$$$$$  /$$$$$$   /$$$$$$$  /$$$$$$$  /$$$$$$  /$$  /$$$$$$  /$$$$$$   /$$  /$$$$$$  /$$$$$$$ 
+ *     /$$__  $$ /$$__  $$ /$$_____/ /$$_____/ /$$__  $$| $$ /$$__  $$|_  $$_/  | $$ /$$__  $$| $$__  $$
+ *    | $$  | $$| $$$$$$$$|  $$$$$$ | $$      | $$  \__/| $$| $$  \ $$  | $$    | $$| $$  \ $$| $$  \ $$
+ *    | $$  | $$| $$_____/ \____  $$| $$      | $$      | $$| $$  | $$  | $$ /$$| $$| $$  | $$| $$  | $$
+ *    |  $$$$$$$|  $$$$$$$ /$$$$$$$/|  $$$$$$$| $$      | $$| $$$$$$$/  |  $$$$/| $$|  $$$$$$/| $$  | $$
+ *     \_______/ \_______/|_______/  \_______/|__/      |__/| $$____/    \___/  |__/ \______/ |__/  |__/
+ *                                                          | $$                                        
+ *                                                          | $$                                        
+ *                                                          |__/                                        
+ */
 .description {
-  padding: 25px;
+  padding: 20px;
   color: #2b0734;
   font-size: 14px;
   font-size: 1.4rem;
 }
 
+/***
+ *                                             /$$       /$$                    
+ *                                            | $$      |__/                    
+ *      /$$$$$$   /$$$$$$   /$$$$$$   /$$$$$$ | $$$$$$$  /$$  /$$$$$$$  /$$$$$$$
+ *     /$$__  $$ /$$__  $$ |____  $$ /$$__  $$| $$__  $$| $$ /$$_____/ /$$_____/
+ *    | $$  \ $$| $$  \__/  /$$$$$$$| $$  \ $$| $$  \ $$| $$| $$      |  $$$$$$ 
+ *    | $$  | $$| $$       /$$__  $$| $$  | $$| $$  | $$| $$| $$       \____  $$
+ *    |  $$$$$$$| $$      |  $$$$$$$| $$$$$$$/| $$  | $$| $$|  $$$$$$$ /$$$$$$$/
+ *     \____  $$|__/       \_______/| $$____/ |__/  |__/|__/ \_______/|_______/ 
+ *     /$$  \ $$                    | $$                                        
+ *    |  $$$$$$/                    | $$                                        
+ *     \______/                     |__/                                        
+ */
 .graphics {
   padding: 20px 0;
 }
@@ -579,8 +801,10 @@ a {
 }
 .graphics .schema-doughnut {
   width: 100%;
+  margin-bottom: 20px;
   float: left;
   width: 50%;
+  margin-bottom: 0;
 }
 .graphics .schema-doughnut .doughnut {
   display: block;
@@ -596,6 +820,19 @@ a {
   margin: 0 auto;
 }
 
+/***
+ *      /$$$$$$                                              /$$           /$$                    
+ *     /$$__  $$                                            | $$          |__/                    
+ *    | $$  \__/  /$$$$$$   /$$$$$$  /$$$$$$/$$$$  /$$   /$$| $$  /$$$$$$  /$$  /$$$$$$   /$$$$$$ 
+ *    | $$$$     /$$__  $$ /$$__  $$| $$_  $$_  $$| $$  | $$| $$ |____  $$| $$ /$$__  $$ /$$__  $$
+ *    | $$_/    | $$  \ $$| $$  \__/| $$ \ $$ \ $$| $$  | $$| $$  /$$$$$$$| $$| $$  \__/| $$$$$$$$
+ *    | $$      | $$  | $$| $$      | $$ | $$ | $$| $$  | $$| $$ /$$__  $$| $$| $$      | $$_____/
+ *    | $$      |  $$$$$$/| $$      | $$ | $$ | $$|  $$$$$$/| $$|  $$$$$$$| $$| $$      |  $$$$$$$
+ *    |__/       \______/ |__/      |__/ |__/ |__/ \______/ |__/ \_______/|__/|__/       \_______/
+ *                                                                                                
+ *                                                                                                
+ *                                                                                                
+ */
 .bloc-formulaire {
   background-color: #2b0734;
   padding: 30px 0;
@@ -603,7 +840,10 @@ a {
 
 .inscription-event {
   position: relative;
+  width: 90%;
+  margin: 0 auto;
   width: 100%;
+  margin: 0;
 }
 .inscription-event:after {
   display: table;
@@ -612,43 +852,59 @@ a {
 }
 .inscription-event .form-bloc-g {
   float: left;
+  width: 100%;
   width: 50%;
 }
 .inscription-event .form-bloc-d {
-  float: left;
+  float: right;
+  width: 100%;
   width: 50%;
 }
 
 .input-inscription {
   color: #2b0734;
   font-family: "futuralt", sans-serif;
+  font-size: 12px;
+  font-size: 1.2rem;
   background-color: white;
   border: none;
   padding: 8px 3px;
-  width: 80%;
+  width: 100%;
   margin-bottom: 10px;
   -webkit-transition: background 0.2s ease-in-out;
   -moz-transition: background 0.2s ease-in-out;
   -o-transition: background 0.2s ease-in-out;
   transition: background 0.2s ease-in-out;
+  width: 90%;
+}
+.input-inscription:last-of-type {
+  margin-bottom: 0;
 }
 .input-inscription:hover, .input-inscription:focus, .input-inscription:active {
   background-color: #d5d3d5;
 }
+.input-inscription.error {
+  background-color: #fab2bb;
+  color: #75121e;
+}
 
 .btn-envoi {
+  float: right;
   cursor: pointer;
-  width: 80%;
+  width: 100%;
   border: none;
   height: 60px;
   color: #2b0734;
   font-family: "futuralt", sans-serif;
   text-transform: uppercase;
   background-color: white;
+  font-size: 12px;
+  font-size: 1.2rem;
   -webkit-transition: background 0.2s ease-in-out;
   -moz-transition: background 0.2s ease-in-out;
   -o-transition: background 0.2s ease-in-out;
   transition: background 0.2s ease-in-out;
+  width: 90%;
 }
 .btn-envoi:hover, .btn-envoi:focus, .btn-envoi:active {
   background-color: #d5d3d5;

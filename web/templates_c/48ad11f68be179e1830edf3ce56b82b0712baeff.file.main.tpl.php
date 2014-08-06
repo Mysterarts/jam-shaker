@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.16, created on 2014-08-02 23:17:49
+<?php /* Smarty version Smarty-3.1.16, created on 2014-08-05 14:07:33
          compiled from "./templates/main.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:74493307053242821c08872-06292422%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '48ad11f68be179e1830edf3ce56b82b0712baeff' => 
     array (
       0 => './templates/main.tpl',
-      1 => 1407012215,
+      1 => 1407240451,
       2 => 'file',
     ),
   ),
@@ -92,11 +92,14 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 
 	<script type="text/javascript" src="include/js/jquery-1.11.0.min.js"></script>
 	<script type="text/javascript" src="include/js/jquery.plugins.js"></script>
+
 	<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
 	<script type="text/javascript" src="include/js/gmaps.js"></script>
+
 	<script type="text/javascript" src="include/js/jquery.mousewheel.js"></script>
 	<script type="text/javascript" src="include/js/mwheelIntent.js"></script>
 
+	<script type="text/javascript" src="include/js/form.js"></script>
 	<script type="text/javascript" src="include/js/customs.js"></script>
 
 	<script type="text/javascript">

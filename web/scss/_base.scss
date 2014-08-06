@@ -29,12 +29,27 @@ a{
 	color: $text;
 }
 
+/***
+ *       /$$     /$$   /$$                        
+ *      | $$    |__/  | $$                        
+ *     /$$$$$$   /$$ /$$$$$$    /$$$$$$   /$$$$$$ 
+ *    |_  $$_/  | $$|_  $$_/   /$$__  $$ /$$__  $$
+ *      | $$    | $$  | $$    | $$  \__/| $$$$$$$$
+ *      | $$ /$$| $$  | $$ /$$| $$      | $$_____/
+ *      |  $$$$/| $$  |  $$$$/| $$      |  $$$$$$$
+ *       \___/  |__/   \___/  |__/       \_______/
+ *                                                
+ *                                                
+ *                                                
+ */
+
 .titre-1{
 
 	font-family: $titre-1;
 	color: $violet;
 	text-transform: uppercase;
 	padding-left: 20px;
+	padding-right: 20px;
 	padding-bottom: 20px;
 	@include font-size(24);
 	line-height: 1.2em;
@@ -73,18 +88,34 @@ a{
 	@include font-size(19);
 	line-height: 1.2em;
 	text-transform: uppercase;
-	padding-left: 20px;
 	padding-bottom: 30px;
+	width: 90%;
+	margin: 0 auto;
 
 	@include respond-min($m768) {
 		@include font-size(22);
-		width: 40%;
+		width: 100%;
+		margin: 0;
 	}
 
 	@include respond-min($m1200) {
 		@include font-size(25);
 	}
 }
+
+/***
+ *                                     /$$               /$$                    
+ *                                    | $$              |__/                    
+ *      /$$$$$$$  /$$$$$$  /$$$$$$$  /$$$$$$    /$$$$$$  /$$ /$$$$$$$   /$$$$$$$
+ *     /$$_____/ /$$__  $$| $$__  $$|_  $$_/   |____  $$| $$| $$__  $$ /$$_____/
+ *    | $$      | $$  \ $$| $$  \ $$  | $$      /$$$$$$$| $$| $$  \ $$|  $$$$$$ 
+ *    | $$      | $$  | $$| $$  | $$  | $$ /$$ /$$__  $$| $$| $$  | $$ \____  $$
+ *    |  $$$$$$$|  $$$$$$/| $$  | $$  |  $$$$/|  $$$$$$$| $$| $$  | $$ /$$$$$$$/
+ *     \_______/ \______/ |__/  |__/   \___/   \_______/|__/|__/  |__/|_______/ 
+ *                                                                              
+ *                                                                              
+ *                                                                              
+ */
 
 .conteneur-global{
 	position: relative;
@@ -199,6 +230,7 @@ a{
  */
 
  .contain-nav{
+
  	@include respond-min($m768) {
 
 		position: absolute;
@@ -264,8 +296,115 @@ a{
  *                                                                 
  */
 
+ /***
+ *                                   
+ *                                   
+ *     /$$$$$$$   /$$$$$$  /$$    /$$
+ *    | $$__  $$ |____  $$|  $$  /$$/
+ *    | $$  \ $$  /$$$$$$$ \  $$/$$/ 
+ *    | $$  | $$ /$$__  $$  \  $$$/  
+ *    | $$  | $$|  $$$$$$$   \  $/   
+ *    |__/  |__/ \_______/    \_/    
+ *                                   
+ *                                   
+ *                                   
+ */
+
+ .second-nav{
+	
+	position: relative;
+	margin: 0 auto 20px auto;
+	width: 90%;	
+
+	&:after{
+		display: table;
+		content : "";
+		clear: both;
+	}
+
+	@include respond-min($m768){
+		width: 100%;
+	}
+ }
+
+ .nav-events{
+
+ 	float: right;
+
+ 	li{
+ 		display: inline-block;
+ 		float: left;
+
+ 		&:first-of-type{
+ 			margin-right: 10px;
+ 		}
+
+ 		a{
+ 			display: block;
+ 			padding: 15px 15px;
+ 			background-color: $gris-fonce;
+ 			color: $blanc;
+ 			text-transform: uppercase;
+ 			@include font-size(12);
+ 			font-family: $basefont;
+
+ 			@include transition(background-color 0.3s ease-in-out, color 0.3s ease-in-out);
+
+			&:hover, &:focus, &:active, &.selected {
+				color: $gris;
+				background-color: $violet;
+			}
+ 		}
+ 	}
+ }
+
+ .contain-events{
+ 	margin-bottom: 30px;
+ }
 
 
+.liste_events{
+	position: relative;
+	display: block;
+	outline: 0;
+	background-color: darken($gris, 8%);
+	padding: 20px 0;
+	border-left: 4px solid darken($gris, 8%);
+	margin-bottom: 20px;
+	overflow: hidden;
+
+	&:after{
+		display: table;
+		content : "";
+		clear: both;
+	}
+
+	&:last-of-type{
+		margin-bottom: 0;
+	}
+
+	@include transition(border-color 0.3s ease-in-out, color 0.3s ease-in-out);
+
+	&:hover{
+		border-color: $violet;
+	}
+
+	//Exception pour le titre "h1"
+	.titre-1{
+		width: 80%
+	}
+
+	.info_sup{
+		padding-left: 20px;
+
+		p{
+			color: $violet;
+			@include font-size(15);
+			line-height: 1.5em;
+ 			font-family: $eventInfo;
+		}
+	}
+}
 
 
 
@@ -285,7 +424,32 @@ a{
  *                                                                 
  */
 
- // Information : Nom / Date / Horaire
+/***
+ *     /$$            /$$$$$$                                                             
+ *    |__/           /$$__  $$                                                            
+ *     /$$ /$$$$$$$ | $$  \__/  /$$$$$$        /$$       /$$$$$$$   /$$$$$$  /$$$$$$/$$$$ 
+ *    | $$| $$__  $$| $$$$     /$$__  $$      |__/      | $$__  $$ /$$__  $$| $$_  $$_  $$
+ *    | $$| $$  \ $$| $$_/    | $$  \ $$                | $$  \ $$| $$  \ $$| $$ \ $$ \ $$
+ *    | $$| $$  | $$| $$      | $$  | $$       /$$      | $$  | $$| $$  | $$| $$ | $$ | $$
+ *    | $$| $$  | $$| $$      |  $$$$$$/      |__/      | $$  | $$|  $$$$$$/| $$ | $$ | $$
+ *    |__/|__/  |__/|__/       \______/                 |__/  |__/ \______/ |__/ |__/ |__/
+ *                                                                                        
+ *                                                                                        
+ *                                                                                        
+ */
+/***
+ *           /$$             /$$                           /$$       /$$                                     /$$                    
+ *          | $$            | $$                          /$$/      | $$                                    |__/                    
+ *      /$$$$$$$  /$$$$$$  /$$$$$$    /$$$$$$            /$$/       | $$$$$$$   /$$$$$$   /$$$$$$   /$$$$$$  /$$  /$$$$$$   /$$$$$$ 
+ *     /$$__  $$ |____  $$|_  $$_/   /$$__  $$          /$$/        | $$__  $$ /$$__  $$ /$$__  $$ |____  $$| $$ /$$__  $$ /$$__  $$
+ *    | $$  | $$  /$$$$$$$  | $$    | $$$$$$$$         /$$/         | $$  \ $$| $$  \ $$| $$  \__/  /$$$$$$$| $$| $$  \__/| $$$$$$$$
+ *    | $$  | $$ /$$__  $$  | $$ /$$| $$_____/        /$$/          | $$  | $$| $$  | $$| $$       /$$__  $$| $$| $$      | $$_____/
+ *    |  $$$$$$$|  $$$$$$$  |  $$$$/|  $$$$$$$       /$$/           | $$  | $$|  $$$$$$/| $$      |  $$$$$$$| $$| $$      |  $$$$$$$
+ *     \_______/ \_______/   \___/   \_______/      |__/            |__/  |__/ \______/ |__/       \_______/|__/|__/       \_______/
+ *                                                                                                                                  
+ *                                                                                                                                  
+ *                                                                                                                                  
+ */
 .info{
 	position: relative;
 	width: 100%;
@@ -343,21 +507,62 @@ a{
 }
 
 
-// Map
+/***
+ *                                      
+ *                                      
+ *     /$$$$$$/$$$$   /$$$$$$   /$$$$$$ 
+ *    | $$_  $$_  $$ |____  $$ /$$__  $$
+ *    | $$ \ $$ \ $$  /$$$$$$$| $$  \ $$
+ *    | $$ | $$ | $$ /$$__  $$| $$  | $$
+ *    | $$ | $$ | $$|  $$$$$$$| $$$$$$$/
+ *    |__/ |__/ |__/ \_______/| $$____/ 
+ *                            | $$      
+ *                            | $$      
+ *                            |__/      
+ */
+
 .map{
 	position: relative;
 	width: 100%;
 	height: 250px;
 }
 
-// Description
+
+/***
+ *           /$$                                         /$$             /$$     /$$                    
+ *          | $$                                        |__/            | $$    |__/                    
+ *      /$$$$$$$  /$$$$$$   /$$$$$$$  /$$$$$$$  /$$$$$$  /$$  /$$$$$$  /$$$$$$   /$$  /$$$$$$  /$$$$$$$ 
+ *     /$$__  $$ /$$__  $$ /$$_____/ /$$_____/ /$$__  $$| $$ /$$__  $$|_  $$_/  | $$ /$$__  $$| $$__  $$
+ *    | $$  | $$| $$$$$$$$|  $$$$$$ | $$      | $$  \__/| $$| $$  \ $$  | $$    | $$| $$  \ $$| $$  \ $$
+ *    | $$  | $$| $$_____/ \____  $$| $$      | $$      | $$| $$  | $$  | $$ /$$| $$| $$  | $$| $$  | $$
+ *    |  $$$$$$$|  $$$$$$$ /$$$$$$$/|  $$$$$$$| $$      | $$| $$$$$$$/  |  $$$$/| $$|  $$$$$$/| $$  | $$
+ *     \_______/ \_______/|_______/  \_______/|__/      |__/| $$____/    \___/  |__/ \______/ |__/  |__/
+ *                                                          | $$                                        
+ *                                                          | $$                                        
+ *                                                          |__/                                        
+ */
+
 .description{
-	padding: 25px;
+	padding: 20px;
 	color: $violet;
 	@include font-size(14);
 }
 
-// Graphics (doughnut / bar)
+
+/***
+ *                                             /$$       /$$                    
+ *                                            | $$      |__/                    
+ *      /$$$$$$   /$$$$$$   /$$$$$$   /$$$$$$ | $$$$$$$  /$$  /$$$$$$$  /$$$$$$$
+ *     /$$__  $$ /$$__  $$ |____  $$ /$$__  $$| $$__  $$| $$ /$$_____/ /$$_____/
+ *    | $$  \ $$| $$  \__/  /$$$$$$$| $$  \ $$| $$  \ $$| $$| $$      |  $$$$$$ 
+ *    | $$  | $$| $$       /$$__  $$| $$  | $$| $$  | $$| $$| $$       \____  $$
+ *    |  $$$$$$$| $$      |  $$$$$$$| $$$$$$$/| $$  | $$| $$|  $$$$$$$ /$$$$$$$/
+ *     \____  $$|__/       \_______/| $$____/ |__/  |__/|__/ \_______/|_______/ 
+ *     /$$  \ $$                    | $$                                        
+ *    |  $$$$$$/                    | $$                                        
+ *     \______/                     |__/                                        
+ */
+
 .graphics{
 
 	padding: 20px 0;
@@ -370,10 +575,12 @@ a{
 
 	.schema-doughnut{
 		width: 100%;
+		margin-bottom: 20px;
 
-		@include respond-min($m900){
+		@include respond-min($m768){
 			float: left;
 			width: 50%;
+			margin-bottom: 0;
 		}
 
 		.doughnut{
@@ -387,7 +594,7 @@ a{
 	.schema-bar{
 		width: 100%;
 
-		@include respond-min($m900){
+		@include respond-min($m768){
 			float: right;
 			width: 50%;
 		}
@@ -401,7 +608,21 @@ a{
 	}
 }
 
-// Formulaire d'inscription
+
+/***
+ *      /$$$$$$                                              /$$           /$$                    
+ *     /$$__  $$                                            | $$          |__/                    
+ *    | $$  \__/  /$$$$$$   /$$$$$$  /$$$$$$/$$$$  /$$   /$$| $$  /$$$$$$  /$$  /$$$$$$   /$$$$$$ 
+ *    | $$$$     /$$__  $$ /$$__  $$| $$_  $$_  $$| $$  | $$| $$ |____  $$| $$ /$$__  $$ /$$__  $$
+ *    | $$_/    | $$  \ $$| $$  \__/| $$ \ $$ \ $$| $$  | $$| $$  /$$$$$$$| $$| $$  \__/| $$$$$$$$
+ *    | $$      | $$  | $$| $$      | $$ | $$ | $$| $$  | $$| $$ /$$__  $$| $$| $$      | $$_____/
+ *    | $$      |  $$$$$$/| $$      | $$ | $$ | $$|  $$$$$$/| $$|  $$$$$$$| $$| $$      |  $$$$$$$
+ *    |__/       \______/ |__/      |__/ |__/ |__/ \______/ |__/ \_______/|__/|__/       \_______/
+ *                                                                                                
+ *                                                                                                
+ *                                                                                                
+ */
+
 .bloc-formulaire{
 	background-color: $violet;
 	padding: 30px 0;
@@ -409,7 +630,8 @@ a{
 
 .inscription-event{
 	position: relative;
-	width: 100%;
+	width: 90%;
+	margin: 0 auto;
 
 	&:after{
 		display: table;
@@ -417,14 +639,27 @@ a{
 		clear: both;
 	}
 
+	@include respond-min($m768) {
+		width: 100%;
+		margin: 0;
+	}
+
 	.form-bloc-g{
 		float: left;
-		width: 50%;
+		width: 100%;
+
+		@include respond-min($m768) {
+			width: 50%;
+		}
 	}
 
 	.form-bloc-d{
-		float: left;
-		width: 50%;
+		float: right;
+		width: 100%;
+
+		@include respond-min($m768) {
+			width: 50%;
+		}
 	}
 }
 
@@ -432,11 +667,16 @@ a{
 
 	color: $violet;
 	font-family: $basefont;
+	@include font-size(12);
 	background-color: $blanc;
 	border : none;
 	padding: 8px 3px;
-	width: 80%;
+	width: 100%;
 	margin-bottom: 10px;
+
+	&:last-of-type{
+		margin-bottom: 0;
+	}
 
 	@include transition(background 0.2s ease-in-out);
 
@@ -444,11 +684,21 @@ a{
 		background-color: darken($gris, 10%);
 	}
 
+	&.error{
+		background-color:#fab2bb;
+		color: #75121e;
+	}
+
+	@include respond-min($m768) {
+		width: 90%;
+	}
+
 }
 
 .btn-envoi{
+	float: right;
 	cursor: pointer;
-	width: 80%;
+	width: 100%;
 	border: none;
 	// padding: 20px;
 	height: 60px;
@@ -456,10 +706,15 @@ a{
 	font-family: $basefont;
 	text-transform: uppercase;
 	background-color: $blanc;
+	@include font-size(12);
 
 	@include transition(background 0.2s ease-in-out);
 
 	&:hover, &:focus, &:active {
 		background-color: darken($gris, 10%);
+	}
+
+	@include respond-min($m768) {
+		width: 90%; // soit 450px
 	}
 }

@@ -191,15 +191,22 @@ $(document).ready(function() {
 		}
 
 		var ctx = document.getElementById("bar").getContext("2d");
-		window.myBar = new Chart(ctx).Bar(barChartData);
+		window.myBar = new Chart(ctx).Bar(barChartData,{
+			scaleShowGridLines : false,
+			scaleShowLabels: false
+			// barShowStroke : false
+		});
 
 	}
 
 	//EVENT : FORMULAIRE
 	if($("#inscription-event").length > 0){
 
+
+		// Selection des options
 		var $icon_form = $(".hi-icon");
 
+		$('input').placeholder();
 		$icon_form.click(function(e){
 
 			e.preventDefault();
@@ -211,6 +218,18 @@ $(document).ready(function() {
 			}
 		});
 
+		// Vérification du formulaire
+		IniInscription();
+
 	}
 
 });
+
+
+function vider_form(){
+	
+	$("#envoi").val("Envoyer");
+	$(".input-inscription ").val("");
+	$(".hi-icon").removeClass("selected");
+
+}
