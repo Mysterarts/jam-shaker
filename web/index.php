@@ -53,18 +53,22 @@ switch($content) {
 
 			while($aRow = mysql_fetch_array($mysql_rs)){
 
-				array_push($core->Events, $aRow);
-
 				$event_id = $aRow["id"];
 				// echo $event_id;
 				$sQuery_second = 'SELECT * FROM js_places WHERE id_event ="'.$event_id.'"';
 				$mysql_rs_second = mysql_query($sQuery_second, $mysql_ressource) or die(mysql_error());
 
-				if(mysql_num_rows($mysql_rs) > 0){
+				if(mysql_num_rows($mysql_rs_second) > 0){
+
+					$tableau_temp = new array();
 					while($i = mysql_fetch_array($mysql_rs_second)){
-						array_push($core->Places, $i);
+						array_push($tableau_temp, $i);
 					}
+
+					array_push($aRow, $tableau_temp);
 				}
+
+				array_push($core->Events, $aRow);
 			}
 
 		}
