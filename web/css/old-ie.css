@@ -655,8 +655,6 @@ a {
 }
 .liste_events .info_sup {
   padding-left: 20px;
-}
-.liste_events .info_sup p {
   color: #2b0734;
   font-size: 15px;
   font-size: 1.5rem;
@@ -793,6 +791,7 @@ a {
  */
 .graphics {
   padding: 20px 0;
+  margin-bottom: 20px;
 }
 .graphics:after {
   display: table;
@@ -810,10 +809,28 @@ a {
   display: block;
   margin: 0 auto;
 }
+.graphics .part_total {
+  position: relative;
+  text-align: center;
+  width: 100%;
+}
+.graphics .part_total:before {
+  display: table;
+  content: "";
+  clear: both;
+}
+.graphics .part_total p {
+  background-color: #bdbbbd;
+  width: 250px;
+  margin: 30px auto 0;
+  padding: 10px;
+}
 .graphics .schema-bar {
   width: 100%;
+  margin-top: 20px;
   float: right;
   width: 50%;
+  margin-top: 0;
 }
 .graphics .schema-bar .bar {
   display: block;
@@ -835,7 +852,7 @@ a {
  */
 .bloc-formulaire {
   background-color: #2b0734;
-  padding: 30px 0;
+  padding: 30px 0 50px 0;
 }
 
 .inscription-event {

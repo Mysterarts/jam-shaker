@@ -20,12 +20,14 @@
 			<a href="event/{$event.url}/" class="liste_events" href=".">
 
 				<h1 class="titre-1">{$event.name}</h1>
-
-				<div class="info_sup">
-					<p>12 Mai - 14 Mai</p>
-					<p>Lieux : Paris, Venise</p>
-				</div>
 				
+				<p class="info_sup">12 Mai - 14 Mai</p>
+
+				<div>
+					<ul>
+					</ul>
+				</div>
+
 			</a>
 			
 		{/foreach}

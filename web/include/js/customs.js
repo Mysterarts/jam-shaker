@@ -225,11 +225,24 @@ $(document).ready(function() {
 
 });
 
-
-function vider_form(){
+function vider_form(tableau_doughnut){
 	
 	$("#envoi").val("Envoyer");
 	$(".input-inscription ").val("");
 	$(".hi-icon").removeClass("selected");
+
+	for (var id in tableau_doughnut) {
+
+		$("#"+id+"-nb").val(parseInt($("#"+id+"-nb").val())+tableau_doughnut[id]);
+	}
+
+	window.myDoughnut.segments[0].value = parseInt($("#gd-nb").val());
+	window.myDoughnut.segments[1].value = parseInt($("#prog-nb").val());
+	window.myDoughnut.segments[2].value = parseInt($("#graph-nb").val());
+	window.myDoughnut.segments[3].value = parseInt($("#son-nb").val());
+	window.myDoughnut.update();
+
+	var nb_participant = $(".part_total p span").html();
+	$(".part_total p span").empty().html(parseInt(nb_participant)+1);
 
 }

@@ -38,19 +38,37 @@ switch($content) {
 		$archive = null;
 		if(!empty($_GET['archive'])){
 
-			$sQuery = 'SELECT * FROM js_events WHERE date_start < "2014-08-02 00:00:00" ORDER BY date_start DESC';
+			$sQuery = 'SELECT * FROM js_events WHERE date_end < DATE_ADD(NOW(), INTERVAL 15 DAY) ORDER BY date_start DESC';
 			$core->sousMenu = "archives";
 
 		}else{
-			$sQuery = 'SELECT * FROM js_events ORDER BY date_start DESC'; // WHERE date_start >= "2014-08-02 00:00:00"
+			$sQuery = 'SELECT * FROM js_events WHERE date_end >= DATE_ADD(NOW(), INTERVAL 15 DAY) ORDER BY date_start DESC';
 			$core->sousMenu = "a_venir";
 		}
 		
 		$mysql_rs = mysql_query($sQuery, $mysql_ressource) or die(mysql_error());
 		$core->Events = array();
-		while($aRow = mysql_fetch_array($mysql_rs)){
-			array_push($core->Events, $aRow);
+		
+		if(mysql_num_rows($mysql_rs) > 0){
+
+			while($aRow = mysql_fetch_array($mysql_rs)){
+
+				array_push($core->Events, $aRow);
+
+				$event_id = $aRow["id"];
+				// echo $event_id;
+				$sQuery_second = 'SELECT * FROM js_places WHERE id_event ="'.$event_id.'"';
+				$mysql_rs_second = mysql_query($sQuery_second, $mysql_ressource) or die(mysql_error());
+
+				if(mysql_num_rows($mysql_rs) > 0){
+					while($i = mysql_fetch_array($mysql_rs_second)){
+						array_push($core->Places, $i);
+					}
+				}
+			}
+
 		}
+		
 
 	break;
 
@@ -106,35 +124,13 @@ switch($content) {
 
 		$core->Nb_Participant = array();
 			
-		$sQuery = 'SELECT SUM(r_gd) as GD_total FROM js_participants WHERE id_places="'.$core->Place["id"].'"';
+		$sQuery = 'SELECT SUM(r_gd) as GD_total, SUM(r_prog) as PROG_total, SUM(r_graph) as GRAPH_total, SUM(r_sound) as SON_total, COUNT(DISTINCT name) as NB_total FROM js_participants WHERE id_places="'.$core->Place["id"].'"';
 		$mysql_rs = mysql_query($sQuery, $mysql_ressource) or die(mysql_error());
 
 		if(mysql_num_rows($mysql_rs) > 0){
-			$core->Nb_Participant["gd"] = mysql_fetch_array($mysql_rs);
-			// echo $core->Nb_Participant["gd"]["GD_total"];
+			$core->Nb_Participant["doughnut"] = mysql_fetch_array($mysql_rs);
+			// echo $core->Nb_Participant["doughnut"]["GD_total"];
 		}
-
-		$sQuery = 'SELECT SUM(r_prog) as PROG_total FROM js_participants WHERE id_places="'.$core->Place["id"].'"';
-		$mysql_rs = mysql_query($sQuery, $mysql_ressource) or die(mysql_error());
-		
-		if(mysql_num_rows($mysql_rs) > 0){
-			$core->Nb_Participant["prog"] = mysql_fetch_array($mysql_rs);
-		}
-
-		$sQuery = 'SELECT SUM(r_graph) as GRAPH_total FROM js_participants WHERE id_places="'.$core->Place["id"].'"';
-		$mysql_rs = mysql_query($sQuery, $mysql_ressource) or die(mysql_error());
-		
-		if(mysql_num_rows($mysql_rs) > 0){
-			$core->Nb_Participant["graph"] = mysql_fetch_array($mysql_rs);
-		}
-
-		$sQuery = 'SELECT SUM(r_sound) as SON_total FROM js_participants WHERE id_places="'.$core->Place["id"].'"';
-		$mysql_rs = mysql_query($sQuery, $mysql_ressource) or die(mysql_error());
-		
-		if(mysql_num_rows($mysql_rs) > 0){
-			$core->Nb_Participant["son"] = mysql_fetch_array($mysql_rs);
-		}
-		
 
 	break;
 

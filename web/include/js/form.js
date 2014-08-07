@@ -62,13 +62,15 @@ var IniInscription = function(){
 				}
 			});
 
-			// for (var id in tab_option) { // On stocke l'identifiant dans « id » pour parcourir l'objet « family »
-    
-			//     alert(id+" "+tab_option[id]);
-			        
-			// }
+			var chaine_option ="";
 
-			envoi_form($this, $this.serialize(), tab_option, id_place, $btn_envoi);
+			for (var id in tab_option) { // On stocke l'identifiant dans « id » pour parcourir l'objet « tab_option »
+    
+			    // alert(id+" "+tab_option[id]);
+			    chaine_option += "&"+id+"="+tab_option[id];
+			}
+
+			envoi_form($this, $this.serialize(), chaine_option, id_place, $btn_envoi, tab_option);
 		}
 
 		return false;
@@ -77,9 +79,9 @@ var IniInscription = function(){
 
 }
 
-function envoi_form(formulaire, donnees, tab_option, place, btnEnvoi){
+function envoi_form(formulaire, donnees, chaine_option, place, btnEnvoi, tab_option){
 
-	var data = donnees+'&gd='+tab_option["gd"]+'&prog='+tab_option["prog"]+'&graph='+tab_option["graph"]+'&son='+tab_option["son"]+'&id_place='+place+'&act=envoi';
+	var data = donnees+chaine_option+'&id_place='+place+'&act=envoi';
 	btnEnvoi.val("envoi en cours...");
 
 	$.ajax({
@@ -93,7 +95,7 @@ function envoi_form(formulaire, donnees, tab_option, place, btnEnvoi){
 			if(reponse.reussite){
 
 				btnEnvoi.val("Votre inscription a été envoyé");
-				setTimeout("vider_form()",3000);
+				setTimeout(vider_form(tab_option),3000);
 
 			}else{
 				btnEnvoi.val("Envoyer");

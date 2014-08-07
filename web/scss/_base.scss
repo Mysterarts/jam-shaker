@@ -397,12 +397,10 @@ a{
 	.info_sup{
 		padding-left: 20px;
 
-		p{
-			color: $violet;
-			@include font-size(15);
-			line-height: 1.5em;
- 			font-family: $eventInfo;
-		}
+		color: $violet;
+		@include font-size(15);
+		line-height: 1.5em;
+ 		font-family: $eventInfo;
 	}
 }
 
@@ -566,6 +564,7 @@ a{
 .graphics{
 
 	padding: 20px 0;
+	margin-bottom: 20px;
 
 	&:after{
 		display: table;
@@ -591,12 +590,33 @@ a{
 		}
 	}
 
+	.part_total{
+		position: relative;
+		text-align: center;
+		width: 100%;
+
+		&:before{
+			display: table;
+			content : "";
+			clear: both;
+		}
+	
+		p{
+			background-color: $gris-fonce;
+			width: 250px;
+			margin: 30px auto 0;
+			padding: 10px;
+		}
+	}
+
 	.schema-bar{
 		width: 100%;
+		margin-top: 20px;
 
 		@include respond-min($m768){
 			float: right;
 			width: 50%;
+			margin-top: 0;
 		}
 
 		.bar{
@@ -625,7 +645,7 @@ a{
 
 .bloc-formulaire{
 	background-color: $violet;
-	padding: 30px 0;
+	padding: 30px 0 50px 0;
 }
 
 .inscription-event{

@@ -29,12 +29,14 @@
 	<div class="contains graphics">
 		<div class="schema-doughnut">
 			<canvas id="doughnut" class="doughnut" width="300" height="300" />
-			<input type="hidden" id="gd-nb" value="{$core->Nb_Participant['gd']['GD_total']}">
-			<input type="hidden" id="prog-nb" value="{$core->Nb_Participant['prog']['PROG_total']}">
-			<input type="hidden" id="graph-nb" value="{$core->Nb_Participant['graph']['GRAPH_total']}">
-			<input type="hidden" id="son-nb" value="{$core->Nb_Participant['son']['SON_total']}">
+			<input type="hidden" id="gd-nb" value="{$core->Nb_Participant['doughnut']['GD_total']}">
+			<input type="hidden" id="prog-nb" value="{$core->Nb_Participant['doughnut']['PROG_total']}">
+			<input type="hidden" id="graph-nb" value="{$core->Nb_Participant['doughnut']['GRAPH_total']}">
+			<input type="hidden" id="son-nb" value="{$core->Nb_Participant['doughnut']['SON_total']}">
 		</div>
 
+		<!-- <div><p class="part_total">Nombre total de participant : <span>{$core->Nb_Participant['doughnut']['NB_total']}</span></p></div> -->
+		
 		<div class="schema-bar">
 			<canvas id="bar" class="bar" width="300" height="300"/>
 		</div>
@@ -47,7 +49,7 @@
 			<form action="#" name="inscription-event" class="inscription-event" id="inscription-event">
 
 				<div class="form-bloc-g">
-					<input type="text" class="input-inscription" id="nom" placeholder="Nom et prénom" name="nom" value="">
+					<input type="text" class="input-inscription" id="nom" placeholder="Nom + prénom" name="nom" value="">
 					<input type="text" class="input-inscription" id="email" placeholder="Mail" name="email" value="">
 					<input type="text" class="input-inscription" id="tel" placeholder="Téléphone" name="tel" value="">
 					<input type="text" class="input-inscription" id="experience" placeholder="Expérience (pro + nombre de jams)" name="experience" value="">
