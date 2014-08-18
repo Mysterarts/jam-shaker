@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.16, created on 2014-08-02 23:17:49
+<?php /* Smarty version Smarty-3.1.16, created on 2014-08-16 22:49:19
          compiled from "./templates/content/home.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:7975551185324a1e0c18c21-03506482%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'ee035fe543dcccb5cfded76c64137b81cc052db1' => 
     array (
       0 => './templates/content/home.tpl',
-      1 => 1407012215,
+      1 => 1408222070,
       2 => 'file',
     ),
   ),
@@ -17,6 +17,59 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'version' => 'Smarty-3.1.16',
   'unifunc' => 'content_5324a1e0c1b6d2_38328677',
+  'variables' => 
+  array (
+    'core' => 0,
+    'event' => 0,
+    'jeu' => 0,
+  ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_5324a1e0c1b6d2_38328677')) {function content_5324a1e0c1b6d2_38328677($_smarty_tpl) {?>Bienvenu à l'accueil<?php }} ?>
+<?php if ($_valid && !is_callable('content_5324a1e0c1b6d2_38328677')) {function content_5324a1e0c1b6d2_38328677($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_truncate')) include '/Applications/MAMP/htdocs/jam-shaker/_CMS/_libs/plugins/modifier.truncate.php';
+?><div class="contains padding-supp">
+	<p class="text-acc"><?php echo $_smarty_tpl->tpl_vars['core']->value->Intro['text'];?>
+</p>
+
+	<h1 class="titre-1">Les évènements à venir</h1>
+
+	<ul class="list-events">
+		<?php  $_smarty_tpl->tpl_vars["event"] = new Smarty_Variable; $_smarty_tpl->tpl_vars["event"]->_loop = false;
+ $_from = $_smarty_tpl->tpl_vars['core']->value->Events; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars["event"]->key => $_smarty_tpl->tpl_vars["event"]->value) {
+$_smarty_tpl->tpl_vars["event"]->_loop = true;
+?>
+			<li class="item-event">
+				<h2 class="titre-event"><?php echo $_smarty_tpl->tpl_vars['event']->value['name'];?>
+</h2>
+			</li>
+		<?php } ?>
+	</ul>
+
+	<h1 class="titre-1">Les jeux de la semaine</h1>
+
+	<ul class="list-jeux">
+		<?php  $_smarty_tpl->tpl_vars["jeu"] = new Smarty_Variable; $_smarty_tpl->tpl_vars["jeu"]->_loop = false;
+ $_from = $_smarty_tpl->tpl_vars['core']->value->Jeux; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars["jeu"]->key => $_smarty_tpl->tpl_vars["jeu"]->value) {
+$_smarty_tpl->tpl_vars["jeu"]->_loop = true;
+?>
+			<li class="jeu">
+				<div class="jeu-img">
+					<img src="img/<?php echo $_smarty_tpl->tpl_vars['jeu']->value['img_max'];?>
+" alt="" />
+				</div>
+				<div class="jeu-text">
+					<h2 class="titre-jeu"><?php echo $_smarty_tpl->tpl_vars['jeu']->value['name'];?>
+</h2>
+					<p class="event"><?php echo $_smarty_tpl->tpl_vars['jeu']->value['name_event']['name'];?>
+</p>
+					<p class="desc"><?php echo smarty_modifier_truncate($_smarty_tpl->tpl_vars['jeu']->value['descr'],400);?>
+</p>
+					<a href="<?php echo $_smarty_tpl->tpl_vars['jeu']->value['url'];?>
+" class="lien-jeu">Jouer</a>
+				</div>
+			</li>
+		<?php } ?>
+	</ul>
+
+</div><?php }} ?>

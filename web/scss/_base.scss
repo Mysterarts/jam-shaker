@@ -48,15 +48,20 @@ a{
 	font-family: $titre-1;
 	color: $violet;
 	text-transform: uppercase;
+	padding-bottom: 20px;
 	padding-left: 20px;
 	padding-right: 20px;
-	padding-bottom: 20px;
 	@include font-size(24);
 	line-height: 1.2em;
 
-	@include respond-min($m768) {
+	&.padding-suppl{ // EN PLUS
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+
+	@include respond-min($m768) { // EN PLUS
 		@include font-size(26);
-		width: 40%;
+		padding: 0 0 20px; // 0 top - 0 left et right - 20 bottom
 	}
 
 	@include respond-min($m1200) {
@@ -68,13 +73,13 @@ a{
 	font-family: $titre-2;
 	color: $violet;
 	padding-left: 20px;
+	padding-right: 20px;
 	padding-bottom: 30px;
 	@include font-size(16);
 	line-height: 1.2em;
 
 	@include respond-min($m768) {
 		@include font-size(18);
-		width: 40%;
 	}
 
 	@include respond-min($m1200) {
@@ -120,7 +125,6 @@ a{
 .conteneur-global{
 	position: relative;
 	width: 100%;
-	padding-top: 50px;
 }
 
 .contains{
@@ -147,6 +151,10 @@ a{
 
 	@include respond-min($m1400) {
 		width: 1200px;
+	}
+
+	&.padding-supp{
+		margin-top: 50px;
 	}
 }
 
@@ -282,6 +290,192 @@ a{
 	}
 }
 
+
+/***
+ *     /$$   /$$  /$$$$$$  /$$      /$$ /$$$$$$$$
+ *    | $$  | $$ /$$__  $$| $$$    /$$$| $$_____/
+ *    | $$  | $$| $$  \ $$| $$$$  /$$$$| $$      
+ *    | $$$$$$$$| $$  | $$| $$ $$/$$ $$| $$$$$   
+ *    | $$__  $$| $$  | $$| $$  $$$| $$| $$__/   
+ *    | $$  | $$| $$  | $$| $$\  $ | $$| $$      
+ *    | $$  | $$|  $$$$$$/| $$ \/  | $$| $$$$$$$$
+ *    |__/  |__/ \______/ |__/     |__/|________/
+ *                                               
+ *                                               
+ *                                               
+ */
+
+
+/***
+ *     /$$             /$$                        
+ *    |__/            | $$                        
+ *     /$$ /$$$$$$$  /$$$$$$    /$$$$$$   /$$$$$$ 
+ *    | $$| $$__  $$|_  $$_/   /$$__  $$ /$$__  $$
+ *    | $$| $$  \ $$  | $$    | $$  \__/| $$  \ $$
+ *    | $$| $$  | $$  | $$ /$$| $$      | $$  | $$
+ *    | $$| $$  | $$  |  $$$$/| $$      |  $$$$$$/
+ *    |__/|__/  |__/   \___/  |__/       \______/ 
+ *                                                
+ *                                                
+ *                                                
+ */
+
+ .text-acc{
+	padding: 0 20px 30px; // 0 top - 20 left et right - 30 bottom
+	color: $violet;
+	@include font-size(14);
+
+	@include respond-min($m768){
+		padding: 0 0 30px; // 0 top - 0 left et right - 30 bottom
+	}
+ }
+
+ /***
+ *                                                /$$              
+ *                                               | $$              
+ *      /$$$$$$  /$$    /$$  /$$$$$$  /$$$$$$$  /$$$$$$    /$$$$$$$
+ *     /$$__  $$|  $$  /$$/ /$$__  $$| $$__  $$|_  $$_/   /$$_____/
+ *    | $$$$$$$$ \  $$/$$/ | $$$$$$$$| $$  \ $$  | $$    |  $$$$$$ 
+ *    | $$_____/  \  $$$/  | $$_____/| $$  | $$  | $$ /$$ \____  $$
+ *    |  $$$$$$$   \  $/   |  $$$$$$$| $$  | $$  |  $$$$/ /$$$$$$$/
+ *     \_______/    \_/     \_______/|__/  |__/   \___/  |_______/ 
+ *                                                                 
+ *                                                                 
+ *                                                                 
+ */
+
+.list-events{
+
+	width: 100%;
+	padding: 0 20px 50px;
+
+	@include respond-min($m768) {
+		padding: 0 0 50px;
+	}
+
+	.item-event{
+
+		width: 100%;
+		border-top: 1px solid $gris-fonce;
+		padding: 20px 0;
+	}
+}
+
+.titre-event{
+	font-family: $titre-2;
+	text-transform: uppercase;
+	@include font-size(20);
+	line-height: 1.4em;
+	text-align: left;
+	color: $violet;
+}
+
+ /***
+ *                                            
+ *                                            
+ *           /$$  /$$$$$$  /$$   /$$ /$$   /$$
+ *          |__/ /$$__  $$| $$  | $$|  $$ /$$/
+ *           /$$| $$$$$$$$| $$  | $$ \  $$$$/ 
+ *          | $$| $$_____/| $$  | $$  >$$  $$ 
+ *          | $$|  $$$$$$$|  $$$$$$/ /$$/\  $$
+ *          | $$ \_______/ \______/ |__/  \__/
+ *     /$$  | $$                              
+ *    |  $$$$$$/                              
+ *     \______/                               
+ */
+
+.list-jeux{
+	width: 100%;
+	padding: 0 20px 50px;
+
+	@include respond-min($m768) {
+		padding: 0 0 50px;
+	}
+
+	.jeu{
+		width: 100%;
+		border-top: 1px solid $gris-fonce;
+		padding: 20px 0;
+
+		&:after{
+			display: table;
+			content : "";
+			clear: both;
+		}
+
+		.jeu-img{
+			float: left;
+			width: 100%;
+			text-align: center;
+
+			@include respond-min($m768){
+				width: 30%;
+			}
+
+			img{
+				max-width: 100%;
+				max-height: 100%;
+			}
+		}
+
+		.jeu-text{
+			float: left;
+			width: 100%;
+
+			@include respond-min($m768){
+				width: 70%;
+				padding: 0 20px;
+			}
+
+			.titre-jeu{
+				@extend .titre-event;
+				// @extend .;
+			}
+
+			.event{
+				width: 300px;
+				padding: 8px;
+				background-color: $violet;
+				color: $gris;
+				text-transform: uppercase;
+				font-family: $basefont;
+				line-height: 1.3em;
+				@include font-size(13);
+			}
+
+			.desc{
+				padding: 10px 0;
+			}
+
+			.lien-jeu{
+				display: block;
+	 			width: 100%;
+	 			padding: 8px 8px;
+	 			outline: 0;
+	 			cursor: pointer;
+	 			background-color: $gris-fonce;
+	 			color: $blanc;
+	 			text-transform: uppercase;
+	 			@include font-size(15);
+	 			font-family: $basefont;
+	 			text-align: center;
+
+	 			@include transition(background-color 0.3s ease-in-out, color 0.3s ease-in-out);
+
+				&:hover {
+					color: $gris;
+					background-color: $violet;
+				}
+
+				@include respond-min($m768){
+					width: 100px;
+				}
+			}
+		}
+	}
+}
+
+
 /***
  *     /$$$$$$$$ /$$    /$$ /$$$$$$$$ /$$   /$$ /$$$$$$$$  /$$$$$$ 
  *    | $$_____/| $$   | $$| $$_____/| $$$ | $$|__  $$__/ /$$__  $$
@@ -358,18 +552,36 @@ a{
  	}
  }
 
+ /***
+ *     /$$ /$$             /$$              
+ *    | $$|__/            | $$              
+ *    | $$ /$$  /$$$$$$$ /$$$$$$    /$$$$$$ 
+ *    | $$| $$ /$$_____/|_  $$_/   /$$__  $$
+ *    | $$| $$|  $$$$$$   | $$    | $$$$$$$$
+ *    | $$| $$ \____  $$  | $$ /$$| $$_____/
+ *    | $$| $$ /$$$$$$$/  |  $$$$/|  $$$$$$$
+ *    |__/|__/|_______/    \___/   \_______/
+ *                                          
+ *                                          
+ *                                          
+ */
+
  .contain-events{
- 	margin-bottom: 30px;
+ 	margin-bottom: 50px;
  }
 
 
-.liste_events{
-	position: relative;
+a.liste_events{ // Uniquement si c'est un lien "a" qui encadre l'événement (et non une div)
 	display: block;
 	outline: 0;
+}
+
+.liste_events{
+	position: relative;
+	// display: block;
+	// outline: 0;
 	background-color: darken($gris, 8%);
-	padding: 20px 0;
-	border-left: 4px solid darken($gris, 8%);
+	padding-top: 20px;
 	margin-bottom: 20px;
 	overflow: hidden;
 
@@ -380,27 +592,76 @@ a{
 	}
 
 	&:last-of-type{
-		margin-bottom: 0;
+		// margin-bottom: 0;
 	}
 
-	@include transition(border-color 0.3s ease-in-out, color 0.3s ease-in-out);
+	@include respond-min($m768){
+	
+		border-left: 4px solid darken($gris, 8%);
 
-	&:hover{
-		border-color: $violet;
+		@include transition(border-color 0.3s ease-in-out, color 0.3s ease-in-out);
+
+		&:hover{
+			border-color: $violet;
+		}
 	}
 
 	//Exception pour le titre "h1"
-	.titre-1{
-		width: 80%
-	}
+	// .titre-1{
+	// 	width: 90%
+	// }
 
 	.info_sup{
 		padding-left: 20px;
-
+		margin-bottom: 20px;
 		color: $violet;
 		@include font-size(15);
 		line-height: 1.5em;
  		font-family: $eventInfo;
+	}
+
+	.liste_places{
+
+		@include respond-min($m768){
+			float: right;
+		}
+	}
+
+	.event_place{
+		display: inline-block;
+		float: left;
+		// width: 50%;
+
+		@include respond-min($m768){
+			// width: auto;
+			// border-right: 1px solid $violet;
+			// &:last-of-type{
+			// 	border-right: 0;
+			// }
+		}
+
+		a{
+			display: block;
+			outline: 0;
+			background-color: $gris-fonce;
+			padding: 10px;
+			text-transform: uppercase;
+			color: $violet;
+			font-family: $basefont;
+			@include font-size(11);
+
+			@include transition(background-color 0.3s ease-in-out, color 0.3s ease-in-out);
+
+			&:hover, &:focus, &:active, &.selected {
+				color: $gris;
+				background-color: $violet;
+			}
+
+			@include respond-min($m768){
+				padding: 15px 20px;
+				@include font-size(12);
+			}
+		}
 	}
 }
 
@@ -448,11 +709,64 @@ a{
  *                                                                                                                                  
  *                                                                                                                                  
  */
+
+ .contain-info-event{
+
+ 	position: relative;
+	width: 100%;
+
+ 	&:after{
+		display: table;
+		content : "";
+		clear: both;
+	}
+
+ }
+
+ .conteneur-flottant{
+	
+	position: relative;
+	width: 100%;
+	padding-top: 50px;
+
+
+	@include respond-min($m768) {
+	 	float: left;
+ 		width: 50%;
+	}	
+
+ 	.conteneur-titre{
+ 		position: relative;
+ 		
+ 		@include respond-min($m768) {
+ 			float: right;
+			width: 350px; // = 700 / 2 (.contains)
+		}
+
+		@include respond-min($m900) {
+			width: 400px; // = 800 / 2
+		}
+
+		@include respond-min($m1024) {
+			width: 450px; // = 900 / 2
+		}
+
+		@include respond-min($m1200) {
+			width: 500px; // = 1000 / 2
+		}
+
+		@include respond-min($m1400) {
+			width: 600px; // = 1200 / 2
+		}
+ 	}
+
+ }
+
 .info{
 	position: relative;
 	width: 100%;
 	background-color: $violet;
-	padding: 40px;
+	padding: 50px;
 
 	&:after{
 		display: table;
@@ -462,9 +776,7 @@ a{
 
 
 	@include respond-min($m768){
-		position: absolute;
-		top: 0;
-		right: 0;
+		float: right;
 		width: 50%;
 	}
 
@@ -574,7 +886,6 @@ a{
 
 	.schema-doughnut{
 		width: 100%;
-		margin-bottom: 20px;
 
 		@include respond-min($m768){
 			float: left;
@@ -587,25 +898,6 @@ a{
 			margin: 0 auto;
 			// width: 300px;
 			// height: 300px;
-		}
-	}
-
-	.part_total{
-		position: relative;
-		text-align: center;
-		width: 100%;
-
-		&:before{
-			display: table;
-			content : "";
-			clear: both;
-		}
-	
-		p{
-			background-color: $gris-fonce;
-			width: 250px;
-			margin: 30px auto 0;
-			padding: 10px;
 		}
 	}
 
@@ -624,6 +916,22 @@ a{
 			margin: 0 auto;
 			// width: 400px;
 			// height: 300px;
+		}
+	}
+
+	.part_total{
+		position: relative;
+		width: 100%;
+		clear: both;
+		padding-top: 25px;
+
+		p{
+			position: relative;
+			background-color: $gris-fonce;
+			text-align: center;
+			width: 250px;
+			margin: 0 auto;
+			padding: 10px;
 		}
 	}
 }
@@ -707,6 +1015,10 @@ a{
 	&.error{
 		background-color:#fab2bb;
 		color: #75121e;
+
+		[placeholder]{
+			color: #75121e;
+		}
 	}
 
 	@include respond-min($m768) {
@@ -736,5 +1048,161 @@ a{
 
 	@include respond-min($m768) {
 		width: 90%; // soit 450px
+	}
+}
+
+
+/***
+ *        /$$$$$ /$$$$$$$$ /$$   /$$ /$$   /$$
+ *       |__  $$| $$_____/| $$  | $$| $$  / $$
+ *          | $$| $$      | $$  | $$|  $$/ $$/
+ *          | $$| $$$$$   | $$  | $$ \  $$$$/ 
+ *     /$$  | $$| $$__/   | $$  | $$  >$$  $$ 
+ *    | $$  | $$| $$      | $$  | $$ /$$/\  $$
+ *    |  $$$$$$/| $$$$$$$$|  $$$$$$/| $$  \ $$
+ *     \______/ |________/ \______/ |__/  |__/
+ *                                            
+ *                                            
+ *                                            
+ */
+
+.contains-jeux{
+	padding: 50px 0;
+}
+
+.grille-jeux{
+	position: relative;
+	// padding: 50px 0;
+	padding-bottom: 30px;
+	width: 100%;
+	text-align: center;
+
+	.item-jeu{ // les "li"
+		display: inline-block;
+		height: 250px;
+		margin: 10px 10px 0; // Top, right et left, pas de bottom
+		vertical-align: top;
+
+		.lien_jeu{ // liens "a" encadrant les images carrés
+			display: block;
+			position: relative;
+			width: 250px; // 250px
+			height: 250px; // 250px
+			overflow: hidden;
+			outline: 0;
+		}
+
+		.desc-jeu{ // div contenant la description du jeu
+			display: none;
+			opacity: 0;
+			overflow: hidden;
+
+			.fleche{ // flèche pour montrer à quel jeu la description appartient
+				position: relative;
+				width: 250px;
+				height: 10px;
+				background: transparent image-url('fleche_jeu.png') no-repeat center center;
+			}
+
+			.contenu-desc{ // contenu du jeu
+				position: absolute;
+				left: 0;
+				width: 100%;
+				min-height: 500px;
+				padding: 50px 30px;
+				// margin-top: 10px;
+				background-color: $gris-clair; //lighten($gris-fonce,10%);
+
+				.icon-close{ // bloc pour fermer la description
+					display: none;
+
+					@include respond-min($m768) {
+						position: absolute;
+						display: block;
+						top: 20px;
+						right: 30px;
+						cursor: pointer;
+						padding: 10px;
+						outline: 0;
+						@include font-size(30);
+						color: $violet;
+
+						@include transition(transform 0.2s linear);
+						@include transform(1, 0deg);
+
+						&:hover{
+							@include transform(1, 180deg);
+						}
+					}
+				}
+
+				.img-desc{ // bloc gauche contenant l'image du jeu
+					width: 100%;
+					height: 100%;
+					float: left;
+					overflow: hidden;
+
+					@include respond-min($m768) {
+						width: 50%;
+					}
+
+					img{
+						max-height: 100%;
+						max-width: 100%;
+						margin: 0 auto;
+					}
+				}
+
+				.text-desc{ // bloc droit contenant le texte du jeu
+					width: 100%;
+					height: 100%;
+					float: left;
+
+					@include respond-min($m768) {
+						width: 50%;
+						padding-left: 30px;
+					}
+
+					.titre-jeu{
+						padding: 20px 0;
+						font-family: $titre-2;
+						text-transform: uppercase;
+						@include font-size(40);
+						line-height: 1.4em;
+						text-align: left;
+						color: $violet;
+					}
+
+					.text{
+						margin-bottom: 20px;
+						color: $violet;
+						@include font-size(15);
+						text-align: left;
+			 			font-family: $basefont;
+					}
+
+					.lien-jeu{
+						display: block;
+						width: 100%;
+			 			padding: 15px 15px;
+			 			background-color: $gris-fonce;
+			 			color: $blanc;
+			 			text-transform: uppercase;
+			 			@include font-size(15);
+			 			font-family: $basefont;
+			 			outline: 0;
+			 			cursor: pointer;
+
+			 			@include transition(background-color 0.3s ease-in-out, color 0.3s ease-in-out);
+
+						&:hover {
+							color: $gris;
+							background-color: $violet;
+						}
+					}
+
+				}
+			}
+		}
 	}
 }
