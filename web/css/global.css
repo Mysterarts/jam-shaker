@@ -144,7 +144,7 @@ html {
 .nav-toggle:before {
   content: "\e602";
   font-size: 16px;
-  color: #2b0734;
+  color: #480c57;
 }
 
 .icon-clock, .icon-calendar {
@@ -284,7 +284,7 @@ html {
   text-align: center;
   position: relative;
   z-index: 1;
-  color: #2b0734;
+  color: #480c57;
   line-height: 60px;
 }
 @media screen and (min-width: 768px) {
@@ -410,7 +410,7 @@ a {
  */
 .titre-1 {
   font-family: "futuralt-heavy";
-  color: #2b0734;
+  color: #480c57;
   text-transform: uppercase;
   padding-bottom: 20px;
   padding-left: 20px;
@@ -448,7 +448,7 @@ a {
 
 .titre-2 {
   font-family: "futuralt";
-  color: #2b0734;
+  color: #480c57;
   padding-left: 20px;
   padding-right: 20px;
   padding-bottom: 30px;
@@ -565,7 +565,7 @@ a {
   position: relative;
   width: 100%;
   padding-top: 20px;
-  background-color: #2b0734;
+  background-color: #480c57;
 }
 @media screen and (min-width: 768px) {
   .header {
@@ -646,7 +646,7 @@ a {
 .nav-main li a {
   display: block;
   background-color: #d6d5d6;
-  color: #2b0734;
+  color: #480c57;
   text-transform: uppercase;
   text-align: center;
   padding: 10px 0;
@@ -658,11 +658,11 @@ a {
 }
 .nav-main li a:hover, .nav-main li a:focus, .nav-main li a:active, .nav-main li a.selected {
   color: #eeedee;
-  background-color: #24062b;
+  background-color: #410b4e;
 }
 @media screen and (min-width: 768px) {
   .nav-main li a:hover, .nav-main li a:focus, .nav-main li a:active, .nav-main li a.selected {
-    background-color: #2b0734;
+    background-color: #480c57;
   }
 }
 @media screen and (min-width: 768px) {
@@ -702,7 +702,7 @@ a {
  */
 .text-acc {
   padding: 0 20px 30px;
-  color: #2b0734;
+  color: #480c57;
   font-size: 14px;
   font-size: 1.4rem;
 }
@@ -759,7 +759,7 @@ a {
   font-size: 2rem;
   line-height: 1.4em;
   text-align: left;
-  color: #2b0734;
+  color: #480c57;
 }
 
 .date-event {
@@ -834,7 +834,7 @@ a {
   padding: 8px;
   margin-left: 65px;
   margin-top: 8px;
-  background-color: #2b0734;
+  background-color: #480c57;
   color: #eeedee;
   text-transform: uppercase;
   font-family: "futuralt", sans-serif;
@@ -871,7 +871,7 @@ a {
 }
 .list-jeux .jeu .jeu-text .lien-jeu:hover {
   color: #eeedee;
-  background-color: #2b0734;
+  background-color: #480c57;
 }
 @media screen and (min-width: 768px) {
   .list-jeux .jeu .jeu-text .lien-jeu {
@@ -947,7 +947,7 @@ a {
 }
 .nav-events li a:hover, .nav-events li a:focus, .nav-events li a:active, .nav-events li a.selected {
   color: #eeedee;
-  background-color: #2b0734;
+  background-color: #480c57;
 }
 
 /***
@@ -993,7 +993,7 @@ a.liste_events {
     transition: border-color 0.3s ease-in-out, color 0.3s ease-in-out;
   }
   .liste_events:hover {
-    border-color: #2b0734;
+    border-color: #480c57;
   }
 }
 .liste_events .badge {
@@ -1006,7 +1006,7 @@ a.liste_events {
 .liste_events .info_sup {
   padding-left: 75px;
   margin-bottom: 20px;
-  color: #2b0734;
+  color: #480c57;
   font-size: 15px;
   font-size: 1.5rem;
   line-height: 1.5em;
@@ -1025,7 +1025,7 @@ a.liste_events {
   background-color: #bdbbbd;
   padding: 10px;
   text-transform: uppercase;
-  color: #2b0734;
+  color: #480c57;
   font-family: "futuralt", sans-serif;
   font-size: 11px;
   font-size: 1.1rem;
@@ -1036,7 +1036,7 @@ a.liste_events {
 }
 .liste_events .event_place a:hover, .liste_events .event_place a:focus, .liste_events .event_place a:active, .liste_events .event_place a.selected {
   color: #eeedee;
-  background-color: #2b0734;
+  background-color: #480c57;
 }
 @media screen and (min-width: 768px) {
   .liste_events .event_place a {
@@ -1146,7 +1146,7 @@ a.liste_events {
 .info {
   position: relative;
   width: 100%;
-  background-color: #2b0734;
+  background-color: #480c57;
   padding: 50px;
 }
 .info:after {
@@ -1223,7 +1223,7 @@ a.liste_events {
  */
 .description {
   padding: 20px;
-  color: #2b0734;
+  color: #480c57;
   font-size: 14px;
   font-size: 1.4rem;
 }
@@ -1308,7 +1308,7 @@ a.liste_events {
  *                                                                                                
  */
 .bloc-formulaire {
-  background-color: #2b0734;
+  background-color: #480c57;
   padding: 30px 0 50px 0;
 }
 
@@ -1348,7 +1348,7 @@ a.liste_events {
 }
 
 .input-inscription {
-  color: #2b0734;
+  color: #480c57;
   font-family: "futuralt", sans-serif;
   font-size: 12px;
   font-size: 1.2rem;
@@ -1387,7 +1387,7 @@ a.liste_events {
   width: 100%;
   border: none;
   height: 60px;
-  color: #2b0734;
+  color: #480c57;
   font-family: "futuralt", sans-serif;
   text-transform: uppercase;
   background-color: white;
@@ -1491,7 +1491,7 @@ a.liste_events {
     outline: 0;
     font-size: 30px;
     font-size: 3rem;
-    color: #2b0734;
+    color: #480c57;
     -webkit-transition: -webkit-transform 0.2s linear;
     -moz-transition: -moz-transform 0.2s linear;
     -o-transition: -o-transform 0.2s linear;
@@ -1543,11 +1543,11 @@ a.liste_events {
   font-size: 4rem;
   line-height: 1.4em;
   text-align: left;
-  color: #2b0734;
+  color: #480c57;
 }
 .grille-jeux .item-jeu .desc-jeu .contenu-desc .text-desc .text {
   margin-bottom: 20px;
-  color: #2b0734;
+  color: #480c57;
   font-size: 15px;
   font-size: 1.5rem;
   text-align: left;
@@ -1577,5 +1577,5 @@ a.liste_events {
 }
 .grille-jeux .item-jeu .desc-jeu .contenu-desc .text-desc .lien-jeu:hover {
   color: #eeedee;
-  background-color: #2b0734;
+  background-color: #480c57;
 }
