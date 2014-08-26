@@ -353,7 +353,7 @@ html {
 }
 
 body {
-  background-color: #eeedee;
+  background-color: #f7f6f7;
   font-family: "futuralt", sans-serif;
   line-height: 1.4em;
   font-size: 12px;
@@ -566,10 +566,10 @@ a {
   padding: 10px 20px;
   text-align: left;
   border-bottom: none;
-  background-color: #eeedee;
+  background-color: #f7f6f7;
 }
 .nav-main li a:hover, .nav-main li a:focus, .nav-main li a:active, .nav-main li a.selected {
-  color: #eeedee;
+  color: #f7f6f7;
   background-color: #410b4e;
   background-color: #480c57;
 }
@@ -715,7 +715,7 @@ a {
   margin-left: 65px;
   margin-top: 8px;
   background-color: #480c57;
-  color: #eeedee;
+  color: #f7f6f7;
   text-transform: uppercase;
   font-family: "futuralt", sans-serif;
   line-height: 1.3em;
@@ -747,7 +747,7 @@ a {
   width: 100px;
 }
 .list-jeux .jeu .jeu-text .lien-jeu:hover {
-  color: #eeedee;
+  color: #f7f6f7;
   background-color: #480c57;
 }
 
@@ -814,7 +814,7 @@ a {
   transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 .nav-events li a:hover, .nav-events li a:focus, .nav-events li a:active, .nav-events li a.selected {
-  color: #eeedee;
+  color: #f7f6f7;
   background-color: #480c57;
 }
 
@@ -842,11 +842,11 @@ a.liste_events {
 
 .liste_events {
   position: relative;
-  background-color: #dad8da;
+  background-color: #e4e0e4;
   padding-top: 20px;
   margin-bottom: 20px;
   overflow: hidden;
-  border-left: 4px solid #dad8da;
+  border-left: 4px solid #e4e0e4;
   -webkit-transition: border-color 0.3s ease-in-out, color 0.3s ease-in-out;
   -moz-transition: border-color 0.3s ease-in-out, color 0.3s ease-in-out;
   -o-transition: border-color 0.3s ease-in-out, color 0.3s ease-in-out;
@@ -902,7 +902,7 @@ a.liste_events {
   font-size: 1.2rem;
 }
 .liste_events .event_place a:hover, .liste_events .event_place a:focus, .liste_events .event_place a:active, .liste_events .event_place a.selected {
-  color: #eeedee;
+  color: #f7f6f7;
   background-color: #480c57;
 }
 
@@ -992,7 +992,7 @@ a.liste_events {
   clear: both;
 }
 .info .date, .info .horaire {
-  color: #eeedee;
+  color: #f7f6f7;
   font-size: 16px;
   font-size: 1.6rem;
   line-height: 1.5em;
@@ -1170,7 +1170,7 @@ a.liste_events {
   margin-bottom: 0;
 }
 .input-inscription:hover, .input-inscription:focus, .input-inscription:active {
-  background-color: #d5d3d5;
+  background-color: #dfdbdf;
 }
 .input-inscription.error {
   background-color: #fab2bb;
@@ -1199,7 +1199,7 @@ a.liste_events {
   width: 90%;
 }
 .btn-envoi:hover, .btn-envoi:focus, .btn-envoi:active {
-  background-color: #d5d3d5;
+  background-color: #dfdbdf;
 }
 
 /***
@@ -1355,6 +1355,6 @@ a.liste_events {
   transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 .grille-jeux .item-jeu .desc-jeu .contenu-desc .text-desc .lien-jeu:hover {
-  color: #eeedee;
+  color: #f7f6f7;
   background-color: #480c57;
 }
