@@ -12,7 +12,7 @@
 
 			<h1 class="titre-1 padding-suppl">{$event.name}</h1>
 			
-			<p class="info_sup"><span class="icon-calendar"></span>12 Mai - 14 Mai</p>
+			<p class="info_sup"><span class="icon-calendar"></span>{$event.date_start|date_format:"%e %B"} - {$event.date_end|date_format:"%e %B"}</p>
 
 			{if $event.PlusieursPlaces} <!-- S'il y a plusieurs places dans l'événement, on met un menu les affichant toutes -->
 

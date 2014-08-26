@@ -18,7 +18,7 @@
 		</div>
 
 		<div class="info">
-			<p class="date"><span class="icon-calendar"></span>12 Mai - 14 Mai</p>
+			<p class="date"><span class="icon-calendar"></span>{$core->Event.date_start|date_format:"%e %B"} - {$core->Event.date_end|date_format:"%e %B"}</p>
 			<p class="horaire"><span class="icon-clock"></span><span class="p-horaire">{$core->Place.timetable}</span></p>
 		</div>
 

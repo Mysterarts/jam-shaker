@@ -7,6 +7,8 @@
 
 require '../_CMS/_libs/Smarty.class.php';
 
+setlocale(LC_TIME,"fr_FR.UTF-8","French_France.1252");
+
 $smarty = new Smarty;
 
 require('include/php/connexion.php');
@@ -315,7 +317,7 @@ function recup_events($mysql_connexion, $requete){
 	$tableau_retour = array();
 
 	if($requete == null){
-		$sQuery = 'SELECT * FROM js_events WHERE date_end >= DATE_ADD(NOW(), INTERVAL 15 DAY) ORDER BY date_start DESC';
+		$sQuery = 'SELECT * FROM js_events WHERE date_end < DATE_ADD(NOW(), INTERVAL 15 DAY) ORDER BY date_start DESC';
 	}else{
 		$sQuery = $requete;
 	}

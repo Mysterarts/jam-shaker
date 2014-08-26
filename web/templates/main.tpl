@@ -56,9 +56,11 @@
 
 	<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
 	<script type="text/javascript" src="include/js/gmaps.js"></script>
-
+	
+	<!--
 	<script type="text/javascript" src="include/js/jquery.mousewheel.js"></script>
 	<script type="text/javascript" src="include/js/mwheelIntent.js"></script>
+	-->
 
 	<script type="text/javascript" src="include/js/grid.js"></script>
 
