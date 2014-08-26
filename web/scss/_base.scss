@@ -1262,7 +1262,7 @@ a.liste_events{ // Uniquement si c'est un lien "a" qui encadre l'événement (et
 						display: block;
 						width: 100%;
 			 			padding: 15px 15px;
-			 			background-color: $gris-fonce;
+			 			background-color: darken($gris-fonce, 15%);
 			 			color: $blanc;
 			 			text-transform: uppercase;
 			 			@include font-size(15);
