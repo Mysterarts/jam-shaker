@@ -59,6 +59,14 @@ a{
 		padding-right: 20px;
 	}
 
+	&.titre-badge{
+		margin-left: 20px + 50px;
+		@include respond-min($m768) {
+			margin-left: 20px;
+			padding: 10px 0;
+		}
+	}
+
 	@include respond-min($m768) { // EN PLUS
 		@include font-size(26);
 		padding: 0 0 20px; // 0 top - 0 left et right - 20 bottom
@@ -177,10 +185,11 @@ a{
 	position: relative;
 	width: 100%;
 	// min-height: 200px - 70px;
-	padding-top : 70px;
+	padding-top : 20px;
 	background-color: $violet;
 
 	@include respond-min($m768) {
+		padding-top : 70px;
 		height: 300px;
 		background: transparent image-url('bg-events.jpg') no-repeat bottom center;
 		-webkit-background-size: cover;
@@ -358,6 +367,21 @@ a{
 		width: 100%;
 		border-top: 1px solid $gris-fonce;
 		padding: 20px 0;
+
+		&:after{
+			display: table;
+			content : "";
+			clear: both;
+		}
+
+		// a revoir
+		.badge{
+			display: block;
+			float: left;
+			margin-right: 15px;
+			width: 50px;
+			height: 50px;
+		}
 	}
 }
 
@@ -368,6 +392,11 @@ a{
 	line-height: 1.4em;
 	text-align: left;
 	color: $violet;
+}
+
+.date-event{
+	margin-top: 5px;
+	margin-left: 50px + 15px;
 }
 
  /***
@@ -429,22 +458,35 @@ a{
 
 			.titre-jeu{
 				@extend .titre-event;
-				// @extend .;
+			}
+
+			.badge{
+				display: block;
+				float: left;
+				margin-right: 15px;
+				width: 50px;
+				height: 50px;
 			}
 
 			.event{
-				width: 300px;
 				padding: 8px;
+				margin-left: 50px + 15px;
+				margin-top: 8px;
 				background-color: $violet;
 				color: $gris;
 				text-transform: uppercase;
 				font-family: $basefont;
 				line-height: 1.3em;
 				@include font-size(13);
+
+				@include respond-min($m768){
+					width: 300px;
+				}
 			}
 
 			.desc{
 				padding: 10px 0;
+				clear: both;
 			}
 
 			.lien-jeu{
@@ -611,8 +653,16 @@ a.liste_events{ // Uniquement si c'est un lien "a" qui encadre l'événement (et
 	// 	width: 90%
 	// }
 
+	.badge{
+		display: block;
+		float: left;
+		margin: 0 15px 0 10px;
+		width: 50px;
+		height: 50px;
+	}
+
 	.info_sup{
-		padding-left: 20px;
+		padding-left: 50px + 15px + 10px; //20px;
 		margin-bottom: 20px;
 		color: $violet;
 		@include font-size(15);
@@ -622,9 +672,9 @@ a.liste_events{ // Uniquement si c'est un lien "a" qui encadre l'événement (et
 
 	.liste_places{
 
-		@include respond-min($m768){
+		//@include respond-min($m768){
 			float: right;
-		}
+		//}
 	}
 
 	.event_place{
@@ -757,6 +807,14 @@ a.liste_events{ // Uniquement si c'est un lien "a" qui encadre l'événement (et
 
 		@include respond-min($m1400) {
 			width: 600px; // = 1200 / 2
+		}
+
+		.badge{
+			display: block;
+			float: left;
+			margin: 0 15px 0 10px;
+			width: 50px;
+			height: 50px;
 		}
  	}
 
@@ -1070,12 +1128,25 @@ a.liste_events{ // Uniquement si c'est un lien "a" qui encadre l'événement (et
 	padding: 50px 0;
 }
 
+.badge-event{
+	display: block;
+	float: left;
+	width: 50px;
+	height: 50px;
+	margin: 0 20px;
+
+	@include respond-min($m768) {
+		margin-left: 0;
+	}
+}
+
 .grille-jeux{
 	position: relative;
 	// padding: 50px 0;
 	padding-bottom: 30px;
 	width: 100%;
 	text-align: center;
+	clear: both;
 
 	.item-jeu{ // les "li"
 		display: inline-block;
@@ -1179,6 +1250,12 @@ a.liste_events{ // Uniquement si c'est un lien "a" qui encadre l'événement (et
 						@include font-size(15);
 						text-align: left;
 			 			font-family: $basefont;
+
+			 			span{
+			 				display: inline-block;
+			 				padding-bottom: 5px;
+			 				text-transform: uppercase;
+			 			}
 					}
 
 					.lien-jeu{

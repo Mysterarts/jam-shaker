@@ -423,6 +423,15 @@ a {
   padding-left: 20px;
   padding-right: 20px;
 }
+.titre-1.titre-badge {
+  margin-left: 70px;
+}
+@media screen and (min-width: 768px) {
+  .titre-1.titre-badge {
+    margin-left: 20px;
+    padding: 10px 0;
+  }
+}
 @media screen and (min-width: 768px) {
   .titre-1 {
     font-size: 26px;
@@ -555,11 +564,12 @@ a {
 .header {
   position: relative;
   width: 100%;
-  padding-top: 70px;
+  padding-top: 20px;
   background-color: #2b0734;
 }
 @media screen and (min-width: 768px) {
   .header {
+    padding-top: 70px;
     height: 300px;
     background: transparent url('../img/bg-events.jpg?1407012215') no-repeat bottom center;
     -webkit-background-size: cover;
@@ -729,6 +739,18 @@ a {
   border-top: 1px solid #bdbbbd;
   padding: 20px 0;
 }
+.list-events .item-event:after {
+  display: table;
+  content: "";
+  clear: both;
+}
+.list-events .item-event .badge {
+  display: block;
+  float: left;
+  margin-right: 15px;
+  width: 50px;
+  height: 50px;
+}
 
 .titre-event, .list-jeux .jeu .jeu-text .titre-jeu {
   font-family: "futuralt";
@@ -738,6 +760,11 @@ a {
   line-height: 1.4em;
   text-align: left;
   color: #2b0734;
+}
+
+.date-event {
+  margin-top: 5px;
+  margin-left: 65px;
 }
 
 /***
@@ -796,9 +823,17 @@ a {
     padding: 0 20px;
   }
 }
+.list-jeux .jeu .jeu-text .badge {
+  display: block;
+  float: left;
+  margin-right: 15px;
+  width: 50px;
+  height: 50px;
+}
 .list-jeux .jeu .jeu-text .event {
-  width: 300px;
   padding: 8px;
+  margin-left: 65px;
+  margin-top: 8px;
   background-color: #2b0734;
   color: #eeedee;
   text-transform: uppercase;
@@ -807,8 +842,14 @@ a {
   font-size: 13px;
   font-size: 1.3rem;
 }
+@media screen and (min-width: 768px) {
+  .list-jeux .jeu .jeu-text .event {
+    width: 300px;
+  }
+}
 .list-jeux .jeu .jeu-text .desc {
   padding: 10px 0;
+  clear: both;
 }
 .list-jeux .jeu .jeu-text .lien-jeu {
   display: block;
@@ -955,8 +996,15 @@ a.liste_events {
     border-color: #2b0734;
   }
 }
+.liste_events .badge {
+  display: block;
+  float: left;
+  margin: 0 15px 0 10px;
+  width: 50px;
+  height: 50px;
+}
 .liste_events .info_sup {
-  padding-left: 20px;
+  padding-left: 75px;
   margin-bottom: 20px;
   color: #2b0734;
   font-size: 15px;
@@ -964,10 +1012,8 @@ a.liste_events {
   line-height: 1.5em;
   font-family: "futuralt-light";
 }
-@media screen and (min-width: 768px) {
-  .liste_events .liste_places {
-    float: right;
-  }
+.liste_events .liste_places {
+  float: right;
 }
 .liste_events .event_place {
   display: inline-block;
@@ -1088,6 +1134,13 @@ a.liste_events {
   .conteneur-flottant .conteneur-titre {
     width: 600px;
   }
+}
+.conteneur-flottant .conteneur-titre .badge {
+  display: block;
+  float: left;
+  margin: 0 15px 0 10px;
+  width: 50px;
+  height: 50px;
 }
 
 .info {
@@ -1371,11 +1424,25 @@ a.liste_events {
   padding: 50px 0;
 }
 
+.badge-event {
+  display: block;
+  float: left;
+  width: 50px;
+  height: 50px;
+  margin: 0 20px;
+}
+@media screen and (min-width: 768px) {
+  .badge-event {
+    margin-left: 0;
+  }
+}
+
 .grille-jeux {
   position: relative;
   padding-bottom: 30px;
   width: 100%;
   text-align: center;
+  clear: both;
 }
 .grille-jeux .item-jeu {
   display: inline-block;
@@ -1485,6 +1552,11 @@ a.liste_events {
   font-size: 1.5rem;
   text-align: left;
   font-family: "futuralt", sans-serif;
+}
+.grille-jeux .item-jeu .desc-jeu .contenu-desc .text-desc .text span {
+  display: inline-block;
+  padding-bottom: 5px;
+  text-transform: uppercase;
 }
 .grille-jeux .item-jeu .desc-jeu .contenu-desc .text-desc .lien-jeu {
   display: block;

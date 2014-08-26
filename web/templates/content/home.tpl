@@ -3,13 +3,7 @@
 
 	<h1 class="titre-1">Les évènements à venir</h1>
 
-	<ul class="list-events">
-		{foreach from=$core->Events item="event"}
-			<li class="item-event">
-				<h2 class="titre-event">{$event.name}</h2>
-			</li>
-		{/foreach}
-	</ul>
+	{include file="commun/events.tpl"}
 
 	<h1 class="titre-1">Les jeux de la semaine</h1>
 
@@ -21,6 +15,7 @@
 				</div>
 				<div class="jeu-text">
 					<h2 class="titre-jeu">{$jeu.name}</h2>
+					<img class="badge" src="img/badges/badge-{$jeu.name_event.id}.png" />
 					<p class="event">{$jeu.name_event.name}</p>
 					<p class="desc">{$jeu.descr|truncate:400}</p>
 					<a href="{$jeu.url}" class="lien-jeu">Jouer</a>

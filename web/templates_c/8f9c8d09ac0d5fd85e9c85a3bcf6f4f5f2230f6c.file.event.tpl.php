@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.16, created on 2014-08-16 13:00:36
+<?php /* Smarty version Smarty-3.1.16, created on 2014-08-26 21:01:51
          compiled from "./templates/content/event.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:99805715353dbae7557df91-48043469%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '8f9c8d09ac0d5fd85e9c85a3bcf6f4f5f2230f6c' => 
     array (
       0 => './templates/content/event.tpl',
-      1 => 1408186825,
+      1 => 1409079639,
       2 => 'file',
     ),
   ),
@@ -36,6 +36,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 
 		<div class="conteneur-flottant">
 			<div class="conteneur-titre">
+				<img class="badge" src="img/badges/badge-<?php echo $_smarty_tpl->tpl_vars['core']->value->Event['id'];?>
+.png" />
 				<h1 class="titre-1 padding-suppl"><?php echo $_smarty_tpl->tpl_vars['core']->value->Event['name'];?>
 </h1>
 				<h2 class="titre-2"><?php echo $_smarty_tpl->tpl_vars['core']->value->Place['location'];?>

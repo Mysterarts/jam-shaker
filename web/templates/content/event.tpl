@@ -11,6 +11,7 @@
 
 		<div class="conteneur-flottant">
 			<div class="conteneur-titre">
+				<img class="badge" src="img/badges/badge-{$core->Event.id}.png" />
 				<h1 class="titre-1 padding-suppl">{$core->Event.name}</h1>
 				<h2 class="titre-2">{$core->Place.location}</h2>
 			</div>

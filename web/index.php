@@ -295,15 +295,53 @@ switch($content) {
 
 		// On récupère tous les événements qui sont à venir
 		// $sQuery = 'SELECT * FROM js_events WHERE date_end >= DATE_ADD(NOW(), INTERVAL 15 DAY) ORDER BY date_start DESC';
-		$sQuery = 'SELECT * FROM js_events ORDER BY date_start DESC';
+		$sQuery = 'SELECT * FROM js_events WHERE date_end >= DATE_ADD(NOW(), INTERVAL 15 DAY) ORDER BY date_start DESC';
 		$mysql_rs = mysql_query($sQuery, $mysql_ressource) or die(mysql_error());
-
 		$core->Events = array();
-
+		
+		// Si la requête s'est bien passé (s'il y a eu une réponse) :
 		if(mysql_num_rows($mysql_rs) > 0){
+
+			// Boucle pour récupérer tous les événements et les stocker dans "$core->Events"
 			while($aRow = mysql_fetch_array($mysql_rs)){
+
+				// On récupère l'id de l'événement en cours de traitement pour aller chercher toutes les places correspondants à cet événement
+				$event_id = $aRow["id"];
+				// echo $event_id;
+				$sQuery_second = 'SELECT * FROM js_places WHERE id_event ="'.$event_id.'"';
+				$mysql_rs_second = mysql_query($sQuery_second, $mysql_ressource) or die(mysql_error());
+
+				// Si la requête s'est bien passé (s'il y a eu une réponse cad s'il y a eu des places pour l'évènement) :
+				if(mysql_num_rows($mysql_rs_second) > 0){
+
+					// Si il y a une seule place pour l'évènement demandé :
+					if(mysql_num_rows($mysql_rs_second) == 1){
+
+						$aRow["PlusieursPlaces"] = false;
+						$aRow["places"] = mysql_fetch_array($mysql_rs_second);
+
+					}else{ // Sinon il y a plusieurs places
+
+						$aRow["PlusieursPlaces"] = true;
+
+						$tableau_temp = array();
+
+						// Boucle pour stocker toutes les places où ont lieux l'événement dans le tableau "tableau_temp"
+						while($i = mysql_fetch_array($mysql_rs_second)){
+							array_push($tableau_temp, $i);
+						}
+
+						// On place le tableau "tableau_temp" dans $aRow["places"]
+						// Ainsi on connait l'étiquette du tableau $aRow qui contient les tableaux des places
+						$aRow["places"] = $tableau_temp;
+					}
+
+				}
+
+				// On stocke les valeurs de l'événement et les différentes places de l'évènement dans "$core->Events"
 				array_push($core->Events, $aRow);
 			}
+
 		}
 
 
