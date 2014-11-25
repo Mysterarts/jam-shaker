@@ -14,8 +14,12 @@
 			<div class="text-desc">
 				<h2 class="titre-jeu">{$jeu.name}</h2>
 				<p class="text">{$jeu.descr}</p>
+				{if $jeu.participants}
 				<p class="text"><span>Jamers :</span> <br> {$jeu.participants}</p>
-				<a class="lien-jeu" href="{$jeu.url}" target="blank">Jouer</a>
+				{/if}
+				{if $jeu.url}	
+					<a class="lien-jeu" href="{$jeu.url}" target="blank">Jouer</a>
+				{/if}
 			</div>
 		</div>
 	</div>

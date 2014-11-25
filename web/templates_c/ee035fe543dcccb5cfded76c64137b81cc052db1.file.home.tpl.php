@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.16, created on 2014-08-27 00:19:47
+<?php /* Smarty version Smarty-3.1.16, created on 2014-08-27 00:42:37
          compiled from "./templates/content/home.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:7975551185324a1e0c18c21-03506482%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'ee035fe543dcccb5cfded76c64137b81cc052db1' => 
     array (
       0 => './templates/content/home.tpl',
-      1 => 1409091586,
+      1 => 1409091874,
       2 => 'file',
     ),
   ),
@@ -27,12 +27,12 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 	<p class="text-acc"><?php echo $_smarty_tpl->tpl_vars['core']->value->Intro['text'];?>
 </p>
 
-	<h1 class="titre-1">Les évènements à venir</h1>
+	<!-- <h1 class="titre-1">Les évènements à venir</h1> -->
 
 	<?php echo $_smarty_tpl->getSubTemplate ("commun/events.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0);?>
 
 
-	<h1 class="titre-1">Les jeux de la semaine</h1>
+	<!-- <h1 class="titre-1">Les jeux de la semaine</h1> -->
 
 </div>
 

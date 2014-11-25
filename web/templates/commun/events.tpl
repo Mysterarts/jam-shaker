@@ -36,6 +36,12 @@
 			</a>
 		{/if}
 
+	{foreachelse}
+
+		<div class="empty_message contains">
+            <p>Aucun évènement récent <a href="events/archives/">(voir les archives)</a>.</p>
+        </div>
+
 	{/foreach}
 
 </div>

@@ -29,6 +29,8 @@ if(isset($_GET['content'])){
 
 $core = null;
 
+$interval_recent = -30; //Les évènements sont récents si supérieurs à 30j
+
 switch($content) {
 
 	case "jeux":
@@ -48,6 +50,7 @@ switch($content) {
 			while($aRow = mysql_fetch_array($mysql_rs)){
 
 				$event_id = $aRow["id"]; // On stocke l'id de l'event en train d'être traité
+				$aRow["jeux"] = array();
 
 				// Seconde requête pour récupérer tous les jeux correspondant à l'event
 				$sQuery_second = 'SELECT * FROM js_games WHERE id_event ="'.$event_id.'"';
@@ -81,15 +84,15 @@ switch($content) {
 
 		$core->Events = array();
 
-		// Si l'utilisateur a cliqué sur le sous-menu "archive" : on récupère tous les événements qui ont eu lieu "aujourd'hui - 15 jours"
+		// Si l'utilisateur a cliqué sur le sous-menu "archive" : on récupère tous les événements qui ont eu lieu "il y a X jours"
 		if(!empty($_GET['archive'])){
 
-			$core->Events = recup_events($mysql_ressource, 'SELECT * FROM js_events WHERE date_end < DATE_ADD(NOW(), INTERVAL 15 DAY) ORDER BY date_start DESC');
+			$core->Events = recup_events($mysql_ressource, 'SELECT * FROM js_events WHERE date_end < DATE_ADD(NOW(), INTERVAL "'.$interval_recent.'" DAY) ORDER BY date_start DESC');
 			$core->sousMenu = "archives";
 
-		// Sinon on prends tous les événèments qui commencé "aujourd'hui - 15 jours"
+		// Sinon on prends tous les événèments qui commencé "entre aujourd'hui et X jours"
 		}else{
-			$core->Events = recup_events($mysql_ressource, null);
+			$core->Events = recup_events($mysql_ressource, 'SELECT * FROM js_events WHERE date_end >= DATE_ADD(NOW(), INTERVAL "'.$interval_recent.'" DAY) ORDER BY date_start DESC');
 			$core->sousMenu = "a_venir";
 		}
 
@@ -115,6 +118,7 @@ switch($content) {
 		// Si la requête s'est bien passée et qu'il y a l'événement demandé
 		if(mysql_num_rows($mysql_rs) > 0){
 			$core->Event = mysql_fetch_array($mysql_rs);
+			$core->Event["date_end_timestamp"] = strtotime($core->Event["date_end"]); // Pour comparaison avec date actuelle
 		}else{
 			//Si aucune place, afficher une erreur (voir le template event)
 			$core->EmptyDisplay = true;
@@ -165,6 +169,46 @@ switch($content) {
 		if(mysql_num_rows($mysql_rs) > 0){
 			$core->Nb_Participant["doughnut"] = mysql_fetch_array($mysql_rs);
 			// echo $core->Nb_Participant["doughnut"]["GD_total"];
+		}
+
+		// Second graph
+		$sQuery = 'SELECT * FROM js_participants WHERE id_places="'.$core->Place["id"].'"';
+		$mysql_rs = mysql_query($sQuery, $mysql_ressource) or die(mysql_error());
+
+		$NbTypes = array();
+		
+		if(mysql_num_rows($mysql_rs) > 0){
+
+			while($aRow = mysql_fetch_array($mysql_rs)){
+				$type = "";
+				if($aRow["r_gd"])
+					$type .= "GD-";
+				if($aRow["r_prog"])
+					$type .= "PROG-";
+				if($aRow["r_graph"])
+					$type .= "GRAPH-";
+				if($aRow["r_sound"])
+					$type .= "SOUND-";
+
+				$type = substr($type, 0, -1);
+
+				if(isset($NbTypes[$type]))
+				{
+					$NbTypes[$type]++;
+				}else{
+					$NbTypes[$type] = 1;
+				}
+			}
+
+			//Serialisation
+			/*
+			foreach ($NbTypes as $key => $value){
+			    $core->Nb_Participant["bar"] .= $key.":"
+			}*/
+
+			$core->Nb_Participant["bar"] = json_encode($NbTypes);
+
+			//print_r($core->Nb_Participant["bar"]);
 		}
 
 	break;
@@ -249,9 +293,8 @@ switch($content) {
 
 
 		// On récupère tous les événements qui sont à venir
-		// $sQuery = 'SELECT * FROM js_events WHERE date_end >= DATE_ADD(NOW(), INTERVAL 15 DAY) ORDER BY date_start DESC';
 		$core->Events = array();
-		$core->Events = recup_events($mysql_ressource, null);
+		$core->Events = recup_events($mysql_ressource, 'SELECT * FROM js_events WHERE date_end >= DATE_ADD(NOW(), INTERVAL "'.$interval_recent.'" DAY) ORDER BY date_start DESC');
 
 		// On récupère les jeux qui doivent être mis sur la page d'accueil
 		$sQuery = 'SELECT * FROM js_games WHERE home=1';
@@ -317,7 +360,7 @@ function recup_events($mysql_connexion, $requete){
 	$tableau_retour = array();
 
 	if($requete == null){
-		$sQuery = 'SELECT * FROM js_events WHERE date_end < DATE_ADD(NOW(), INTERVAL 15 DAY) ORDER BY date_start DESC';
+		$sQuery = 'SELECT * FROM js_events WHERE date_end >= DATE_ADD(NOW(), INTERVAL 80 DAY) ORDER BY date_start DESC';
 	}else{
 		$sQuery = $requete;
 	}

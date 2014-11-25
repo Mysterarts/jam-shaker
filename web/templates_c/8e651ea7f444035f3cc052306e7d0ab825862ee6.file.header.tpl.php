@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.16, created on 2014-08-08 16:58:06
+<?php /* Smarty version Smarty-3.1.16, created on 2014-08-27 23:56:19
          compiled from "./templates/commun/header.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:135237051853242821cf45a3-88250225%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '8e651ea7f444035f3cc052306e7d0ab825862ee6' => 
     array (
       0 => './templates/commun/header.tpl',
-      1 => 1407509880,
+      1 => 1409176578,
       2 => 'file',
     ),
   ),
@@ -31,8 +31,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 		<nav class="nav-main" id="nav-main">
 			<ul>
 				<li><a href="home/" <?php if ($_smarty_tpl->tpl_vars['content']->value=='home') {?>class="selected"<?php }?>>Accueil</a></li>
-				<li><a href="jeux/" <?php if ($_smarty_tpl->tpl_vars['content']->value=='jeux') {?>class="selected"<?php }?> >Jeux</a></li>
 				<li><a href="events/" <?php if ($_smarty_tpl->tpl_vars['content']->value=='event'||$_smarty_tpl->tpl_vars['content']->value=='events') {?>class="selected"<?php }?> >Évènements</a></li>
+				<li><a href="jeux/" <?php if ($_smarty_tpl->tpl_vars['content']->value=='jeux') {?>class="selected"<?php }?> >Jeux</a></li>
 			</ul>
 		</nav>
 	</div>

@@ -299,6 +299,28 @@ a{
 	}
 }
 
+.empty_message{
+	position: relative;
+	// display: block;
+	// outline: 0;
+	background-color: darken($gris, 8%);
+	padding: 15px;
+	margin-top: 10px;
+	margin-bottom: 20px;
+
+	p {
+		text-align: left;
+
+		a {
+			color: $violet;
+
+			&:hover {
+				color: lighten($violet, 10%);
+			}
+		}
+	}
+}
+
 
 /***
  *     /$$   /$$  /$$$$$$  /$$      /$$ /$$$$$$$$

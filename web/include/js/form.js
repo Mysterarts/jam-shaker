@@ -24,7 +24,7 @@ var IniInscription = function(){
 		//    - on met "champs_non_rempli" à "true" pour ne pas envoyer le formulaire
 		$.each( $input, function( key, value ) {
 
-			if( ($(this).val() == "") || ($(this).val().toLowerCase() === $(this).attr("placeholder").toLowerCase()) ){
+			if( ( ($(this).val() == "") || ($(this).val().toLowerCase() === $(this).attr("placeholder").toLowerCase()) ) && value.name != "tel" ){
 
 				if(!$(this).hasClass('error') ){
 					$(this).addClass("error");

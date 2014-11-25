@@ -35,47 +35,54 @@
 	</div>
 
 	<div class="contains graphics">
-		<div class="schema-doughnut">
-			<canvas id="doughnut" class="doughnut" width="300" height="300" />
-			<input type="hidden" id="gd-nb" value="{$core->Nb_Participant['doughnut']['GD_total']}">
-			<input type="hidden" id="prog-nb" value="{$core->Nb_Participant['doughnut']['PROG_total']}">
-			<input type="hidden" id="graph-nb" value="{$core->Nb_Participant['doughnut']['GRAPH_total']}">
-			<input type="hidden" id="son-nb" value="{$core->Nb_Participant['doughnut']['SON_total']}">
-		</div>
-		
-		<div class="schema-bar">
-			<canvas id="bar" class="bar" width="300" height="300"/>
-		</div>
+		{if $core->Nb_Participant['doughnut']['NB_total'] > 0}
+			<div class="schema-doughnut">
+				<canvas id="doughnut" class="doughnut" width="300" height="300" />
+				<input type="hidden" id="gd-nb" value="{$core->Nb_Participant['doughnut']['GD_total']}">
+				<input type="hidden" id="prog-nb" value="{$core->Nb_Participant['doughnut']['PROG_total']}">
+				<input type="hidden" id="graph-nb" value="{$core->Nb_Participant['doughnut']['GRAPH_total']}">
+				<input type="hidden" id="son-nb" value="{$core->Nb_Participant['doughnut']['SON_total']}">
+			</div>
+			
+			<div class="schema-bar">
+				<canvas id="bar" class="bar" width="300" height="300"/>
+				<input type="hidden" id="bar-data" value='{$core->Nb_Participant['bar']}'>
+			</div>
 
-		<div class="part_total"><p>Nombre total de participant : <span>{$core->Nb_Participant['doughnut']['NB_total']}</span></p></div>
+			<div class="part_total"><p>Nombre total de participant : <span>{$core->Nb_Participant['doughnut']['NB_total']}</span></p></div>
+		{else}
+			<div class="part_total"><p>Pas de statistique sur les participants</span></p></div>
+		{/if}
 
 	</div>
 
 
-
 	<div class="bloc-formulaire">
 		<div class="contains">
-			<h3 class="titre-3">Inscription</h3>
-			<form action="#" name="inscription-event" class="inscription-event" id="inscription-event">
+			{if $smarty.now < $core->Event.date_end_timestamp}
+				<h3 class="titre-3">Inscription</h3>
+				<form action="#" name="inscription-event" class="inscription-event" id="inscription-event">
 
-				<div class="form-bloc-g">
-					<input type="text" class="input-inscription" id="nom" placeholder="Nom + prénom" name="nom" value="">
-					<input type="text" class="input-inscription" id="email" placeholder="Mail" name="email" value="">
-					<input type="text" class="input-inscription" id="tel" placeholder="Téléphone" name="tel" value="">
-					<input type="text" class="input-inscription" id="experience" placeholder="Expérience (pro + nombre de jams)" name="experience" value="">
-				</div>
-				<div class="form-bloc-d">
-					<div class="hi-icon-wrap hi-icon-effect-1 hi-icon-effect-1a">
-						<div class="contain-icon"><a class="hi-icon" id="gd" >GD</a></div>
-						<div class="contain-icon"><a class="hi-icon" id="prog" >Prog</a></div>
-						<div class="contain-icon"><a class="hi-icon" id="graph" >Graph</a></div>
-						<div class="contain-icon"><a class="hi-icon" id="son" >Son</a></div>
+					<div class="form-bloc-g">
+						<input type="text" class="input-inscription" id="nom" placeholder="Nom + prénom" name="nom" value="">
+						<input type="text" class="input-inscription" id="email" placeholder="Mail" name="email" value="">
+						<input type="text" class="input-inscription" id="tel" placeholder="Téléphone" name="tel" value="">
+						<input type="text" class="input-inscription" id="experience" placeholder="Expérience (pro + nombre de jams)" name="experience" value="">
 					</div>
-					<input type="hidden" id="place" value="{$core->Place.id}">
-					<input type="submit" id="envoi" class="btn-envoi" value="Envoyer">
-				</div>
-
-			</form>
+					<div class="form-bloc-d">
+						<div class="hi-icon-wrap hi-icon-effect-1 hi-icon-effect-1a">
+							<div class="contain-icon"><a class="hi-icon" id="gd" >GD</a></div>
+							<div class="contain-icon"><a class="hi-icon" id="prog" >Prog</a></div>
+							<div class="contain-icon"><a class="hi-icon" id="graph" >Graph</a></div>
+							<div class="contain-icon"><a class="hi-icon" id="son" >Son</a></div>
+						</div>
+						<input type="hidden" id="place" value="{$core->Place.id}">
+						<input type="submit" id="envoi" class="btn-envoi" value="Envoyer">
+					</div>
+				</form>
+			{else}
+				<h3 class="titre-3">Inscription close</h3>
+			{/if}
 		</div>
 	</div>
 

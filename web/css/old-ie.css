@@ -490,7 +490,7 @@ a {
   background-color: #480c57;
   padding-top: 70px;
   height: 300px;
-  background: transparent url('../img/bg-events.jpg?1407012215') no-repeat bottom center;
+  background: transparent url('../img/bg-events.jpg?1405525384') no-repeat bottom center;
   -webkit-background-size: cover;
   background-size: cover;
 }
@@ -513,7 +513,7 @@ a {
   width: 100%;
   height: 73px;
   margin-bottom: 20px;
-  background: transparent url('../img/logo-jamshaker-s.png?1407012215') no-repeat center center;
+  background: transparent url('../img/logo-jamshaker-s.png?1405634342') no-repeat center center;
   text-indent: -9999px;
   z-index: 2;
   background-image: url(../img/logo-jamshaker.png);
@@ -572,6 +572,23 @@ a {
   color: #f7f6f7;
   background-color: #410b4e;
   background-color: #480c57;
+}
+
+.empty_message {
+  position: relative;
+  background-color: #e4e0e4;
+  padding: 15px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+.empty_message p {
+  text-align: left;
+}
+.empty_message p a {
+  color: #480c57;
+}
+.empty_message p a:hover {
+  color: #6d1284;
 }
 
 /***
@@ -1258,7 +1275,7 @@ a.liste_events {
   position: relative;
   width: 250px;
   height: 10px;
-  background: transparent url('../img/fleche_jeu.png?1408013677') no-repeat center center;
+  background: transparent url('../img/fleche_jeu.png?1408358937') no-repeat center center;
 }
 .grille-jeux .item-jeu .desc-jeu .contenu-desc {
   position: absolute;

@@ -243,17 +243,25 @@ $(document).ready(function() {
 
 	if($("#bar").length > 0) {
 
-		var randomScalingFactor = function(){ return Math.round(Math.random()*100)};
+		var barLabels = new Array();
+		var barValues = new Array();
+
+		var barData = JSON.parse($("#bar-data").val());
+
+		jQuery.each(barData, function(key, val) {
+			barLabels.push(key);
+   			barValues.push(val);
+		});
 
 		var barChartData = {
-			labels : ["Prog-Graph","Graph-Gd","Prog-Gd","Son-Graph","Son-Prog","Son-Gd"],
+			labels : barLabels,
 			datasets : [
 				{
 					fillColor : "rgba(43,7,53,0.5)",
 					strokeColor : "rgba(43,7,53,0.6)",
 					highlightFill: "rgba(43,7,53,0.75)",
 					highlightStroke: "rgba(43,7,53,8)",
-					data : [randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor()]
+					data : barValues
 				}
 			]
 		}
