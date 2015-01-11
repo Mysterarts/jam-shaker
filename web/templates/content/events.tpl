@@ -8,7 +8,7 @@
 		<nav class="nav-events">
 			<ul>
 				<li><a href="events/archives/" {if $core->sousMenu =='archives'} class="selected"{/if} >Archives</a></li>
-				<li><a href="events/" {if $core->sousMenu =='a_venir'} class="selected"{/if} >Récents</a></li>
+				<li><a href="events/" {if $core->sousMenu =='a_venir'} class="selected"{/if} >A Venir</a></li>
 			</ul>
 		</nav>
 	</div>

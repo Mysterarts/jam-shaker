@@ -1,29 +1,29 @@
-<?php /* Smarty version Smarty-3.1.16, created on 2014-11-17 01:20:12
+<?php /* Smarty version Smarty-3.1.16, created on 2015-01-11 23:25:01
          compiled from "./templates/content/event.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:99805715353dbae7557df91-48043469%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:129105599254b2f83d045436-85066754%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '8f9c8d09ac0d5fd85e9c85a3bcf6f4f5f2230f6c' => 
     array (
       0 => './templates/content/event.tpl',
-      1 => 1416183605,
+      1 => 1417048740,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '99805715353dbae7557df91-48043469',
+  'nocache_hash' => '129105599254b2f83d045436-85066754',
   'function' => 
   array (
   ),
-  'version' => 'Smarty-3.1.16',
-  'unifunc' => 'content_53dbae75592429_84210808',
   'variables' => 
   array (
     'core' => 0,
   ),
   'has_nocache_code' => false,
+  'version' => 'Smarty-3.1.16',
+  'unifunc' => 'content_54b2f83d1a2ca5_41182224',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_53dbae75592429_84210808')) {function content_53dbae75592429_84210808($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_date_format')) include '/Applications/MAMP/htdocs/jam-shaker/_CMS/_libs/plugins/modifier.date_format.php';
+<?php if ($_valid && !is_callable('content_54b2f83d1a2ca5_41182224')) {function content_54b2f83d1a2ca5_41182224($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_date_format')) include '/Applications/MAMP/htdocs/jam-shaker/_CMS/_libs/plugins/modifier.date_format.php';
 ?><?php if ($_smarty_tpl->tpl_vars['core']->value->EmptyDisplay) {?>
 
 	<div class="contains">
@@ -106,7 +106,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 				<form action="#" name="inscription-event" class="inscription-event" id="inscription-event">
 
 					<div class="form-bloc-g">
-						<input type="text" class="input-inscription" id="nom" placeholder="Nom + prénom" name="nom" value="">
+						<input type="text" class="input-inscription" id="nom" placeholder="Prénom Nom" name="nom" value="">
 						<input type="text" class="input-inscription" id="email" placeholder="Mail" name="email" value="">
 						<input type="text" class="input-inscription" id="tel" placeholder="Téléphone" name="tel" value="">
 						<input type="text" class="input-inscription" id="experience" placeholder="Expérience (pro + nombre de jams)" name="experience" value="">

@@ -64,7 +64,7 @@
 				<form action="#" name="inscription-event" class="inscription-event" id="inscription-event">
 
 					<div class="form-bloc-g">
-						<input type="text" class="input-inscription" id="nom" placeholder="Nom + prénom" name="nom" value="">
+						<input type="text" class="input-inscription" id="nom" placeholder="Prénom Nom" name="nom" value="">
 						<input type="text" class="input-inscription" id="email" placeholder="Mail" name="email" value="">
 						<input type="text" class="input-inscription" id="tel" placeholder="Téléphone" name="tel" value="">
 						<input type="text" class="input-inscription" id="experience" placeholder="Expérience (pro + nombre de jams)" name="experience" value="">

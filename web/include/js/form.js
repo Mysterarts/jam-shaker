@@ -18,7 +18,7 @@ var IniInscription = function(){
 		var tab_option = new Array();
 		var id_place = $("#place").val();
 
-		// Boucle pour regarder si tous les inputs sont remplis
+		// Boucle pour regarder si tous les inputs sont remplis sauf tel
 		// Si ce n'est pas le cas :
 		//    - ajout de la class "error" pour faire briller l'input en rouge
 		//    - on met "champs_non_rempli" à "true" pour ne pas envoyer le formulaire
@@ -122,7 +122,7 @@ function envoi_form(formulaire, donnees, chaine_option, place, btnEnvoi, tab_opt
 			if(reponse.reussite){
 
 				btnEnvoi.val("Votre inscription a été envoyé");
-				setTimeout(vider_form(tab_option),3000); // Appel de la fonction "vider_form" situé dans "customs.js"
+				setTimeout(vider_form(tab_option), 3000); // Appel de la fonction "vider_form" situé dans "customs.js"
 
 			}else{
 				btnEnvoi.val("Envoyer");

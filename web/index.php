@@ -29,7 +29,7 @@ if(isset($_GET['content'])){
 
 $core = null;
 
-$interval_recent = -30; //Les évènements sont récents si supérieurs à 30j
+$interval_recent = -4; //Les évènements sont récents si supérieurs à 30j
 
 switch($content) {
 
@@ -247,6 +247,7 @@ switch($content) {
 
 			// On vérifie la syntaxe du téléphone
 			// Si la syntaxe est incorrect, on retourne sur le formulaire pour prévenir l'internaute (exit)
+			/*
 			if (preg_match("#^0[1-68]([-. ]?[0-9]{2}){4}$#", $tel)){
 
 				$tel_valide = true;
@@ -257,12 +258,12 @@ switch($content) {
 					"nom_echec" => "tel"
 				);
 				exit(json_encode($operation_terminee));
-			}
+			}*/
 
 			// Si tout le formulaire est OK :
 			// On insère le nouveau participant dans la BDD
 			// On retourne sur le formulaire en précisant que l'opération est réussite (exit)
-			if($mail_valide && $tel_valide){
+			if($mail_valide){
 
 				$sQuery = 'INSERT INTO js_participants(id, id_places, name, mail, phone, xp, r_gd, r_prog, r_graph, r_sound) VALUES ("", "'.$id_place.'","'.$nom.'","'.$email.'","'.$tel.'","'.$experience.'","'.$gd.'","'.$prog.'","'.$graph.'","'.$son.'")';
 				$mysql_rs = mysql_query($sQuery, $mysql_ressource) or die(mysql_error());
@@ -274,6 +275,14 @@ switch($content) {
 			}
 
 		}
+
+	break;
+
+	case "desertBus":
+
+		$meta["title"] = "Jam Shaker - Desert Bus Jam 2014";
+		$meta["description"] = "Jam Shaker - Desert Bus Jam 2014";
+		$meta["keywords"] = "Jam Shaker - Desert Bus Jam 2014";
 
 	break;
 

@@ -51,7 +51,7 @@ a{
 	padding-bottom: 20px;
 	padding-left: 20px;
 	padding-right: 20px;
-	@include font-size(24);
+	@include font-size(20);
 	line-height: 1.2em;
 
 	&.padding-suppl{ // EN PLUS
@@ -68,12 +68,12 @@ a{
 	}
 
 	@include respond-min($m768) { // EN PLUS
-		@include font-size(26);
-		padding: 0 0 20px; // 0 top - 0 left et right - 20 bottom
+		@include font-size(24);
+		padding: 0 0 22px; // 0 top - 0 left et right - 20 bottom
 	}
 
 	@include respond-min($m1200) {
-		@include font-size(28);
+		@include font-size(24);
 	}
 }
 
@@ -160,6 +160,15 @@ a{
 	@include respond-min($m1400) {
 		width: 1200px;
 	}
+
+	&.padding-supp{
+		margin-top: 50px;
+	}
+}
+
+.contains_large{
+	position: relative;
+	margin: 20px;
 
 	&.padding-supp{
 		margin-top: 50px;
@@ -354,11 +363,21 @@ a{
  .text-acc{
 	padding: 0 20px 30px; // 0 top - 20 left et right - 30 bottom
 	color: $violet;
-	@include font-size(14);
+	line-height: 1.4em;
+	text-align: center;
+	@include font-size(20);
 
 	@include respond-min($m768){
 		padding: 0 0 30px; // 0 top - 0 left et right - 30 bottom
 	}
+
+	a {
+		color: lighten($violet, 10%);
+
+			&:hover {
+				color: lighten($violet, 15%);
+			}
+		}
  }
 
  /***
@@ -421,6 +440,11 @@ a{
 	margin-left: 50px + 15px;
 }
 
+ul {
+	list-style-type: disc;
+	margin-left: 20px;
+}
+
  /***
  *                                            
  *                                            
@@ -434,6 +458,18 @@ a{
  *    |  $$$$$$/                              
  *     \______/                               
  */
+
+ .text-jeux{
+	padding: 0 20px 30px; // 0 top - 20 left et right - 30 bottom
+	color: $violet;
+	line-height: 1.4em;
+	text-align: center;
+	@include font-size(20);
+
+	@include respond-min($m768){
+		padding: 0 0 30px; // 0 top - 0 left et right - 30 bottom
+	}
+ }
 
 .list-jeux{
 	width: 100%;
