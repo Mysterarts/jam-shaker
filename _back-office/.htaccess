@@ -1,0 +1,26 @@
+DirectoryIndex index.php
+
+php_flag display_errors on
+
+<FilesMatch "\.(inc|tpl)$">
+	Order allow,deny
+	Deny from all
+	Satisfy all
+</FilesMatch>
+
+Options +FollowSymlinks
+RewriteEngine on
+
+# Pages
+RewriteRule ^(jeux)/$ index.php?content=$1 [QSA,L]
+RewriteRule ^(events)/$ index.php?content=$1 [QSA,L]
+RewriteRule ^(home)/$ index.php?content=$1 [QSA,L]
+RewriteRule ^(inscription)/$ index.php?content=$1 [QSA,L]
+
+RewriteRule ^(event)/([^/]+)/$ index.php?content=$1&event=$2 [QSA,L]
+RewriteRule ^(event)/([^/]+)/([^/]+)/$ index.php?content=$1&event=$2&place=$3 [QSA,L]
+
+RewriteRule ^(events)/(archives)/$ index.php?content=$1&archive=$2 [QSA,L]
+
+RewriteRule ^(JeuxDesertBusPageSecreteSuperEncryptee31LEJJdekj3lkELkdde)/$ index.php?content=desertBus [QSA,L]
+# RewriteRule ^(.*[^\/]).html$ index.php?content=$1 [QSA,L]

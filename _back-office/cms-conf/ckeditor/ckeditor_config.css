@@ -1,0 +1,103 @@
+/*
+Copyright (c) 2003-2010, CKSource - Frederico Knabben. All rights reserved.
+For licensing, see LICENSE.html or http://ckeditor.com/license
+*/
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700,700italic,300,700&subset=latin,latin-ext);
+
+
+*{-webkit-text-size-adjust:none;}
+*:focus {outline: none;}
+
+body{
+	background: #fff;
+	font: 13px 'Open Sans', sans-serif;
+	color: #58585a;
+	padding: 5px;
+}
+
+html{
+	/* #3658: [IE6] Editor document has horizontal scrollbar on long lines
+	To prevent this misbehavior, we show the scrollbar always */
+	_overflow-y: scroll;
+}
+
+img:-moz-broken{
+	-moz-force-broken-image-icon : 1;
+	width : 24px;
+	height : 24px;
+}
+
+/*img, input, textarea{ cursor: default; }*/
+
+img.aligncentre{ margin: 7px 0 15px 0; }
+img.aligngauche{ float: left; margin: 0px 20px 5px 0; }
+img.aligndroite{ float: right; margin: 0px 0px 5px 15px; }
+
+/*p {
+	line-height: 24px;
+	margin: 0 0 1.2em 0;
+}*/
+
+/*h2:first-of-type {
+	margin-top: 0;
+}
+
+h2:after {
+	display: block;
+	content: '';
+	height: 2px;
+	width: 20px;
+	background-color: #ff5a44  ;
+	margin-top: 15px;
+}*/
+/*.list-txt		{color: #008ac9;}*/
+
+/* MON CODE */
+@font-face {
+    font-family: 'din_lightregular';
+    src: url("../../fonts/ff_din_light-webfont.eot"); 
+    src: url("../../fonts/ff_din_light-webfont.eot?#iefix") format("embedded-opentype"),
+         url("../../fonts/ff_din_light-webfont.woff") format("woff"),
+         url("../../fonts/ff_din_light-webfont.ttf") format("truetype"),
+         url("../../fonts/ff_din_light-webfont.svg#din_lightregular") format("svg");
+    font-weight: normal;
+    font-style: normal;
+}
+
+h2 {
+	font-family: "din_lightregular", sans-serif;
+	font-size: 16;
+	color: #9a8d7f;
+	padding-bottom: 8px;
+	clear: both;
+	text-transform: uppercase;
+}
+
+h3{
+	font-family: "Open Sans";
+	font-size: 12;
+	font-weight: 700; 
+	color: #333333;
+	padding: 10px 0;
+	margin: 10px 0;
+}
+
+p{
+	font-family: "Open Sans";
+	font-weight: 300;
+	font-size: 12;
+	color: #58585a;
+	padding: 10px 0 20px;
+}
+
+ul{
+	font-family: "Open Sans";
+	font-size: 12;
+	font-weight: 300;
+	margin-bottom: 20px;
+	color: #58585a;
+}
+
+li{
+	list-style-type: disc;
+}

@@ -1,0 +1,913 @@
+html {
+	@include box-sizing(border-box);
+}
+
+*, *:before, *:after {
+	@include box-sizing(inherit);
+	outline: none;
+}
+
+html {
+	-webkit-text-size-adjust: 100%;
+}
+
+body {
+	@include font-size($font-size);
+	font-family: $font-base;
+	color: $color-text;
+	background-color: $color-bg;
+	
+	&.admin, &.admin-2{
+		width: 100%;
+		height: 100%;
+		background-color: $gris_clair;
+
+		@include mq($from: tablet) {
+			background: transparent image-url('bg-admin.jpg') no-repeat center center fixed;
+			background-size: cover;
+			-webkit-background-size: cover;
+		}
+	}
+}
+
+
+/***
+ *      /$$$$$$   /$$$$$$  /$$   /$$ /$$   /$$ /$$$$$$$$ /$$   /$$ /$$$$$$  /$$$$$$  /$$   /$$
+ *     /$$__  $$ /$$__  $$| $$$ | $$| $$$ | $$| $$_____/| $$  / $$|_  $$_/ /$$__  $$| $$$ | $$
+ *    | $$  \__/| $$  \ $$| $$$$| $$| $$$$| $$| $$      |  $$/ $$/  | $$  | $$  \ $$| $$$$| $$
+ *    | $$      | $$  | $$| $$ $$ $$| $$ $$ $$| $$$$$    \  $$$$/   | $$  | $$  | $$| $$ $$ $$
+ *    | $$      | $$  | $$| $$  $$$$| $$  $$$$| $$__/     >$$  $$   | $$  | $$  | $$| $$  $$$$
+ *    | $$    $$| $$  | $$| $$\  $$$| $$\  $$$| $$       /$$/\  $$  | $$  | $$  | $$| $$\  $$$
+ *    |  $$$$$$/|  $$$$$$/| $$ \  $$| $$ \  $$| $$$$$$$$| $$  \ $$ /$$$$$$|  $$$$$$/| $$ \  $$
+ *     \______/  \______/ |__/  \__/|__/  \__/|________/|__/  |__/|______/ \______/ |__/  \__/
+ *                                                                                            
+ *                                                                                            
+ *                                                                                            
+ */
+
+.wrapper-connect{
+	position: relative;
+	width: 80%;
+	margin: 80px auto 0;
+
+	@include mq($from: tablet) {
+		width: 350px;
+		margin-top: 150px
+	}
+
+	@include mq($from: desktop) {
+		width: 400px;
+		margin-top: 200px;
+	}
+}
+
+.input{
+	width: 100%;
+	margin-bottom: 20px;
+	padding: 5px;
+	border: 3px solid $gris_fonce;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+
+	font-family: $font-light;
+	@include font-size(12);
+	color: darken($gris_fonce, 30%);
+
+	@include transition(border 0.3s ease-in-out, color 0.3s ease-in-out);
+	&:hover, &:active{
+		border-color: $couleur_global;
+		color: $couleur_global;
+	}
+
+	@include mq($from: tablet) {
+		padding: 10px;
+		@include font-size(14);
+	}
+}
+
+.btn-envoyer{
+	width: 100%;
+	padding: 10px 0;
+	background-color: $couleur_global;
+	border: none;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+
+	text-align: center;
+	text-transform: uppercase;
+	font-family: $font-light;
+	color: $blanc;
+	@include font-size(12);
+
+	@include transition(background-color 0.3s ease-in-out);
+	&:hover{
+		background-color: darken($couleur_global, 8%);
+	}
+
+	@include mq($from: tablet) {
+		padding: 20px 0;
+		@include font-size(14);
+	}
+}
+
+
+
+/***
+ *      /$$$$$$  /$$$$$$$  /$$      /$$ /$$$$$$ /$$   /$$
+ *     /$$__  $$| $$__  $$| $$$    /$$$|_  $$_/| $$$ | $$
+ *    | $$  \ $$| $$  \ $$| $$$$  /$$$$  | $$  | $$$$| $$
+ *    | $$$$$$$$| $$  | $$| $$ $$/$$ $$  | $$  | $$ $$ $$
+ *    | $$__  $$| $$  | $$| $$  $$$| $$  | $$  | $$  $$$$
+ *    | $$  | $$| $$  | $$| $$\  $ | $$  | $$  | $$\  $$$
+ *    | $$  | $$| $$$$$$$/| $$ \/  | $$ /$$$$$$| $$ \  $$
+ *    |__/  |__/|_______/ |__/     |__/|______/|__/  \__/
+ *                                                       
+ *                                                       
+ *                                                       
+ */
+
+ .wrapper{
+ 	position: relative;
+ 	width: 90%;
+ 	margin: 0 auto;	
+
+ 	@include mq($from: tablet) {
+		width: 760px;
+	}
+
+ 	@include mq($from: desktop) {
+		width: 960px;
+	}
+
+ 	@include mq($from: wide) {
+ 		width: 1100px;
+ 	}
+ }
+
+ /***
+ *     /$$$$$$$  /$$        /$$$$$$   /$$$$$$         /$$$$$$   /$$$$$$  /$$   /$$  /$$$$$$  /$$   /$$ /$$$$$$$$
+ *    | $$__  $$| $$       /$$__  $$ /$$__  $$       /$$__  $$ /$$__  $$| $$  | $$ /$$__  $$| $$  | $$| $$_____/
+ *    | $$  \ $$| $$      | $$  \ $$| $$  \__/      | $$  \__/| $$  \ $$| $$  | $$| $$  \__/| $$  | $$| $$      
+ *    | $$$$$$$ | $$      | $$  | $$| $$            | $$ /$$$$| $$$$$$$$| $$  | $$| $$      | $$$$$$$$| $$$$$   
+ *    | $$__  $$| $$      | $$  | $$| $$            | $$|_  $$| $$__  $$| $$  | $$| $$      | $$__  $$| $$__/   
+ *    | $$  \ $$| $$      | $$  | $$| $$    $$      | $$  \ $$| $$  | $$| $$  | $$| $$    $$| $$  | $$| $$      
+ *    | $$$$$$$/| $$$$$$$$|  $$$$$$/|  $$$$$$/      |  $$$$$$/| $$  | $$|  $$$$$$/|  $$$$$$/| $$  | $$| $$$$$$$$
+ *    |_______/ |________/ \______/  \______/        \______/ |__/  |__/ \______/  \______/ |__/  |__/|________/
+ *                                                                                                              
+ *                                                                                                              
+ *                                                                                                              
+ */
+
+ .contain-g{
+ 	position: relative;
+ 	float: left;
+ 	width: 100%;
+ 	padding-top: 20px;
+
+ 	@include mq($from: tablet) {
+ 		position: fixed;
+		width: 230px;
+	}
+
+ 	@include mq($from: desktop) {
+		width: 260px;
+	}
+
+ 	@include mq($from: wide) {
+ 		width: 300px;
+ 	}
+
+ }
+
+.logo{
+	display: block;
+	width: 150px;
+	height: 80px;
+	margin: 0 auto;
+	background: transparent image-url('logo.png') no-repeat top left;
+	background-size:  100% auto;
+	text-indent: -9999px;
+	z-index: 2;
+	margin-bottom: 10px;
+
+	@include mq($from: tablet) {
+		width: 180px;
+		height: 100px;
+		margin: 0 0 15px;
+	}
+
+ 	@include mq($from: desktop) {
+		width: 200px;
+ 		margin-bottom: 20px;
+	}
+}
+
+.menu-admin{
+	position: relative;
+	width: 100%;
+
+ 	@include mq($from: tablet) {
+		width: 190px;
+	}
+
+ 	@include mq($from: desktop) {
+		width: 220px;
+	}
+
+ 	@include mq($from: wide) {
+ 		width: 260px;
+ 	}
+
+
+	.item{
+		width: 100%;
+
+		@include mq($from: tablet) {
+			margin-bottom: 5px;
+
+			&:last-of-type{
+				margin-bottom: 0px;
+			}
+		}
+	}
+
+	.item-a{
+		display: block;
+		padding: 10px;
+		background-color: $blanc;
+
+		text-transform: uppercase;
+		font-family: $font-light;
+		color: $couleur_global;
+		@include font-size(12);
+		border-bottom: 1px solid $couleur_global;
+
+		@include transition(background-color 0.3s ease-in-out, color 0.3s ease-in-out);
+		&:hover, &.selected{
+			background-color: darken($couleur_global, 8%);
+			color:$blanc;
+		}
+
+		@include mq($from: tablet) {
+			border-bottom: 0;
+			padding: 15px;
+			background-color: $couleur_global;
+			@include font-size(14);
+			color: $blanc;
+
+			&:hover, &.selected{
+				background-color: darken($couleur_global, 8%);
+			}
+		}
+	}
+}
+
+/***
+ *     /$$$$$$$  /$$        /$$$$$$   /$$$$$$        /$$$$$$$  /$$$$$$$   /$$$$$$  /$$$$$$ /$$$$$$$$
+ *    | $$__  $$| $$       /$$__  $$ /$$__  $$      | $$__  $$| $$__  $$ /$$__  $$|_  $$_/|__  $$__/
+ *    | $$  \ $$| $$      | $$  \ $$| $$  \__/      | $$  \ $$| $$  \ $$| $$  \ $$  | $$     | $$   
+ *    | $$$$$$$ | $$      | $$  | $$| $$            | $$  | $$| $$$$$$$/| $$  | $$  | $$     | $$   
+ *    | $$__  $$| $$      | $$  | $$| $$            | $$  | $$| $$__  $$| $$  | $$  | $$     | $$   
+ *    | $$  \ $$| $$      | $$  | $$| $$    $$      | $$  | $$| $$  \ $$| $$  | $$  | $$     | $$   
+ *    | $$$$$$$/| $$$$$$$$|  $$$$$$/|  $$$$$$/      | $$$$$$$/| $$  | $$|  $$$$$$/ /$$$$$$   | $$   
+ *    |_______/ |________/ \______/  \______/       |_______/ |__/  |__/ \______/ |______/   |__/   
+ *                                                                                                  
+ *                                                                                                  
+ *                                                                                                  
+ */
+
+.contain-d{
+ 	position: relative;
+ 	float: right;
+ 	width: 100%;
+ 	background-color: rgba($blanc, 0.9);
+ 	margin-top: 20px;
+
+ 	@include mq($from: tablet) {
+		width: 530px;
+		margin-top: 0;
+	}
+
+ 	@include mq($from: desktop) {
+		width: 700px;
+	}
+
+ 	@include mq($from: wide) {
+ 		width: 800px;
+ 	}
+ }
+
+/***
+ *       /$$     /$$   /$$                        
+ *      | $$    |__/  | $$                        
+ *     /$$$$$$   /$$ /$$$$$$    /$$$$$$   /$$$$$$ 
+ *    |_  $$_/  | $$|_  $$_/   /$$__  $$ /$$__  $$
+ *      | $$    | $$  | $$    | $$  \__/| $$$$$$$$
+ *      | $$ /$$| $$  | $$ /$$| $$      | $$_____/
+ *      |  $$$$/| $$  |  $$$$/| $$      |  $$$$$$$
+ *       \___/  |__/   \___/  |__/       \_______/
+ *                                                
+ *                                                
+ *                                                
+ */
+
+ .titre-h1{
+ 	padding: 10px;
+ 	text-transform: uppercase;
+ 	font-family: $font-black;
+ 	@include font-size(18);
+ 	color: $couleur_global;
+
+ 	@include mq($from: tablet) {
+		@include font-size(22);
+		padding: 15px;
+	}
+
+ 	@include mq($from: desktop) {
+		@include font-size(25);
+	}
+ }
+
+ .separateur{
+ 	border: 1px solid $couleur_global;
+ 	margin: 0 0 20px;
+
+ 	@include mq($from: tablet) {
+ 		margin-bottom: 30px;
+ 	}
+ }
+
+ .titre-h2{
+ 	width: 100%;
+ 	padding: 5px 10px;
+ 	background-color: $couleur_global;
+ 	text-transform: uppercase;
+ 	font-family: $font-light-extra;
+ 	@include font-size(15);
+ 	color: $blanc;
+
+ 	@include mq($from: tablet) {
+ 		padding: 5px 15px;
+ 		@include font-size(16);
+ 	}
+
+ 	@include mq($from: desktop) {
+		@include font-size(18);
+	}
+ }
+
+/***
+ *      /$$$$$$                                              /$$           /$$                    
+ *     /$$__  $$                                            | $$          |__/                    
+ *    | $$  \__/  /$$$$$$   /$$$$$$  /$$$$$$/$$$$  /$$   /$$| $$  /$$$$$$  /$$  /$$$$$$   /$$$$$$ 
+ *    | $$$$     /$$__  $$ /$$__  $$| $$_  $$_  $$| $$  | $$| $$ |____  $$| $$ /$$__  $$ /$$__  $$
+ *    | $$_/    | $$  \ $$| $$  \__/| $$ \ $$ \ $$| $$  | $$| $$  /$$$$$$$| $$| $$  \__/| $$$$$$$$
+ *    | $$      | $$  | $$| $$      | $$ | $$ | $$| $$  | $$| $$ /$$__  $$| $$| $$      | $$_____/
+ *    | $$      |  $$$$$$/| $$      | $$ | $$ | $$|  $$$$$$/| $$|  $$$$$$$| $$| $$      |  $$$$$$$
+ *    |__/       \______/ |__/      |__/ |__/ |__/ \______/ |__/ \_______/|__/|__/       \_______/
+ *                                                                                                
+ *                                                                                                
+ *                                                                                                
+ */
+
+ .form-admin{
+ 	margin-top: 10px;
+ 	padding: 10px;
+
+ 	@include mq($from: tablet) {
+ 		margin-top: 20px;
+		padding: 15px;
+	}
+ }
+
+ .item-form{
+ 	@include clearfix();
+ 	clear: both;
+ 	margin-bottom: 10px;
+
+ 	&:last-of-type{
+ 		margin-bottom: 0;
+ 	}
+ }
+
+ .label{
+ 	display: block;
+ 	width: 100%;
+ 	padding-bottom: 5px;
+ 	
+ 	font-family: $font-base;
+ 	@include font-size(12);
+ 	color: $noir;
+
+ 	@include mq($from: tablet) {
+ 		float: left;
+ 		width: 20%;
+ 		padding: 10px 10px 0 0;
+ 	}
+}
+
+.input-text{
+	display: block;
+	width: 100%;
+	padding: 10px;
+	border: 1px solid $gris_fonce;
+	background-color: $blanc;
+	color: $noir;
+	font-family: $font-base;
+	@include font-size(12);
+
+	@include transition(border 0.3s ease-in-out);
+	&:hover, &:active{
+		border-color: $couleur_global;
+	}
+
+	@include mq($from: tablet) {
+ 		width: 80%;
+ 	}
+}
+
+.input-textarea{
+	@extend .input-text;
+}
+
+.input-select{
+	@extend .input-text;
+}
+
+.btn-radio{
+	position: relative;
+	float: left;
+	width: 100%;
+
+	@include mq($from: tablet) {
+ 		width: 80%;
+ 	}
+
+ 	.bloc-radio{
+ 		width: 100%;
+
+ 		.input-radio{
+			margin-top: 12px;
+			margin-right: 5px;
+		}
+
+		.label-radio{
+			font-family: $font-base;
+		 	@include font-size(12);
+		 	color: $noir;
+		 	margin-right: 10px;
+		}
+
+ 	}
+ }
+
+ .btn-checkbox{
+ 	position: relative;
+	float: left;
+	width: 100%;
+
+	@include mq($from: tablet) {
+ 		width: 80%;
+ 	}
+
+ 	.bloc-checkbox{
+ 		width: 100%;
+
+ 		.input-checkbox{
+			margin-top: 12px;
+			margin-right: 5px;
+		}
+
+ 		.label-checkbox{
+	 		font-family: $font-base;
+		 	@include font-size(12);
+		 	color: $noir;
+		 	margin-right: 10px;
+	 	}
+ 	}
+ }
+
+.map{
+	width: 100%;
+	height: 300px;
+
+	@include mq($from: tablet) {
+ 		width: 80%;
+ 	}
+}
+
+.btn-map{
+	display: block;
+	float: left;
+	width: 130px;
+	margin-top: 10px;
+	margin-right: 10px;
+	padding: 5px 0;
+
+	background-color: $couleur_global;
+	color: $blanc;
+	text-transform: uppercase;
+	font-family: $font-light; 
+	@include font-size(12);
+	text-align: center;
+
+	@include mq($from: tablet) {
+		&:nth-of-type(odd){
+			margin-left: 20%;
+		}
+	}
+
+	@include mq($from: desktop) {
+		
+		&:nth-of-type(n){
+			margin-left: 0;
+		}
+
+		&:nth-of-type(3n+1){
+			margin-left: 20%;
+		}
+	}
+
+	@include transition(background-color 0.3s ease-in-out);
+	&:hover{
+		background-color: darken($couleur_global, 8%);
+	}
+}
+
+.img-miniature{
+	position: relative;
+	float: left;
+	width: 100%;
+
+	@include mq($from: tablet) {
+ 		width: 80%;
+ 	}	
+
+ 	.bloc-img{
+ 		position: relative;
+ 		float: left;
+ 		margin-right: 5px;
+ 		margin-bottom: 5px;
+ 		width: 110px;
+ 		height: 110px;
+
+ 		.img{
+ 			position: relative;
+ 			width: 100%;
+ 			height: 100%;
+ 		}
+
+ 		.cache{
+ 			position: absolute;
+ 			width: 100%;
+ 			height: 100%;
+ 			top: 0;
+ 			left: 0;
+ 			background-color: rgba($blanc, 0.8);
+
+ 			opacity: 0;
+ 			@include transition(opacity 0.3s ease-in-out);
+
+ 			.icon{
+ 				display: block;
+ 				float: left;
+ 				width: 35px;
+ 				height: 35px;
+ 				margin-top: 40px;
+ 				margin-left: 15px;
+ 				border: $couleur_global solid 2px;
+ 				-webkit-border-radius: 50%;
+				-moz-border-radius: 50%;
+				border-radius: 50%;
+				color: $couleur_global;
+
+				@include transition(background-color 0.3s ease-in-out, color 0.3s ease-in-out);
+
+				&.icon-supp{
+					margin-left: 10px;
+				}
+
+				&:hover{
+		 			background-color: $couleur_global;
+		 			color: $blanc;
+		 		}
+ 			}
+ 		}
+
+ 		&:hover .cache{
+ 			opacity: 1;
+ 		}
+ 	}
+
+ 	.ajouter{
+ 		clear: both;
+ 		
+ 		.ajout-a{
+ 			display: block;
+ 			width: 200px;
+ 			padding: 5px 10px;
+ 			background-color: $couleur_global;
+
+ 			text-transform: uppercase;
+ 			color: $blanc;
+ 			font-family: $font-light;
+ 			@include font-size(12);
+
+ 			@include transition(background-color 0.3s ease-in-out);
+			&:hover{
+				color: $blanc;
+				background-color: darken($couleur_global, 8%);
+			}
+
+ 		}
+ 	}
+ 	
+}
+
+.document-joint{
+	position: relative;
+	float: left;
+	width: 100%;
+
+	@include mq($from: tablet) {
+ 		width: 80%;
+ 	}
+
+ 	.bloc-fichier{
+ 		position: relative;
+ 		float: left;
+ 		margin-bottom: 5px;
+ 		width: 100%;
+
+ 		.nom-fichier{
+ 			float: left;
+ 			margin-right: 20px;
+ 			padding-top: 10px;
+ 			font-family: $font-base;
+		 	@include font-size(12);
+		 	color: $noir;
+ 		}
+
+ 		.option{
+ 			float: left;
+
+ 			.icon{
+ 				display: block;
+ 				float: left;
+ 				width: 35px;
+ 				height: 35px;
+ 				border: $couleur_global solid 2px;
+ 				-webkit-border-radius: 50%;
+				-moz-border-radius: 50%;
+				border-radius: 50%;
+				color: $couleur_global;
+
+				@include transition(background-color 0.3s ease-in-out, color 0.3s ease-in-out);
+
+				&:hover{
+		 			background-color: $couleur_global;
+		 			color: $blanc;
+		 		}
+
+		 		&:first-of-type{
+		 			margin-right: 10px;
+		 		}
+ 			}
+ 		}
+ 	}
+
+ 	.ajouter{
+ 		clear: both;
+
+ 		.ajout-a{
+ 			display: block;
+ 			width: 200px;
+ 			padding: 5px 10px;
+ 			background-color: $couleur_global;
+
+ 			text-transform: uppercase;
+ 			color: $blanc;
+ 			font-family: $font-light;
+ 			@include font-size(12);
+
+ 			@include transition(background-color 0.3s ease-in-out);
+			&:hover{
+				color: $blanc;
+				background-color: darken($couleur_global, 8%);
+			}
+
+ 		}
+ 	}
+ 
+}
+
+.textarea-ckeditor{
+	position: relative;
+	float: left;
+	width: 100%;
+
+	@include mq($from: tablet) {
+ 		width: 80%;
+ 	}	
+	
+}
+
+.btn-action-form{
+	float: left;
+	width: 130px;
+	margin-top: 10px;
+	margin-right: 10px;
+	padding: 10px 0;
+	background-color: $blanc;
+	border: 1px solid $couleur_global;
+
+	text-align: center;
+	text-transform: uppercase;
+	font-family: $font-light;
+	color: $couleur_global;
+	@include font-size(12);
+
+	@include transition(background-color 0.3s ease-in-out, color 0.3s ease-in-out);
+	&:hover{
+		color: $blanc;
+		background-color: $couleur_global;
+	}
+
+	@include mq($from: tablet) {
+		width: 150px;
+		margin-right: 0;
+		margin-left: 20%;
+		@include font-size(14);
+
+		&:last-of-type{
+			margin-left: 20px;
+		}
+	}
+
+	@include mq($from: desktop) {
+		width: 200px;
+	}
+}
+
+
+/***
+ *     /$$       /$$$$$$  /$$$$$$  /$$$$$$$$ /$$$$$$$$  /$$$$$$ 
+ *    | $$      |_  $$_/ /$$__  $$|__  $$__/| $$_____/ /$$__  $$
+ *    | $$        | $$  | $$  \__/   | $$   | $$      | $$  \__/
+ *    | $$        | $$  |  $$$$$$    | $$   | $$$$$   |  $$$$$$ 
+ *    | $$        | $$   \____  $$   | $$   | $$__/    \____  $$
+ *    | $$        | $$   /$$  \ $$   | $$   | $$       /$$  \ $$
+ *    | $$$$$$$$ /$$$$$$|  $$$$$$/   | $$   | $$$$$$$$|  $$$$$$/
+ *    |________/|______/ \______/    |__/   |________/ \______/ 
+ *                                                              
+ *                                                              
+ *                                                              
+ */
+
+.bloc-ajout{
+	padding: 10px;
+	margin-bottom: 20px;
+
+ 	@include mq($from: tablet) {
+		padding: 15px;
+	}
+
+	.ajouter-donnee{
+		padding: 10px;
+		background-color: $blanc;
+		border: 1px solid $couleur_global;
+
+		text-transform: uppercase;
+		font-family: $font-light;
+		color: $couleur_global;
+		@include font-size(12);
+
+		@include transition(background-color 0.3s ease-in-out, color 0.3s ease-in-out);
+		&:hover{
+			color: $blanc;
+			background-color: $couleur_global;
+		}
+
+		@include mq($from: tablet) {
+			@include font-size(14);
+		}
+	}
+}
+
+.bloc-titre{
+	width: 100%;
+ 	padding: 5px 10px;
+ 	background-color: $couleur_global;
+ 	@include clearfix();
+
+ 	@include mq($from: tablet) {
+ 		padding: 5px 15px;
+ 	}
+
+ 	.item-titre{
+ 		display: none;
+ 		float: left;
+ 		width: 30%;
+ 		padding-right: 20px;
+
+		text-transform: uppercase;
+	 	font-family: $font-light-extra;
+	 	@include font-size(12);
+	 	color: $blanc;
+
+	 	&:nth-of-type(1),&:nth-of-type(2){
+ 			display: inline-block;
+ 		}
+
+	 	@include mq($from: tablet) {
+	 		@include font-size(14);
+	 	}
+
+	 	@include mq($from: desktop) {
+			@include font-size(16);
+			width: 20%;
+
+			&:nth-of-type(n){
+	 			display: inline-block;
+	 		}
+		}
+ 	}
+}
+
+.bloc-donnees{
+	position: relative;
+	@include clearfix();
+	padding: 10px;
+	border-bottom: 1px solid #dddbdb;
+
+	&:first-of-type{
+		margin-top: 20px;
+	}
+	&:last-of-type{
+		margin-bottom: 20px;
+	}
+
+ 	@include mq($from: tablet) {
+		padding: 10px 15px;
+	}
+
+	.item-donnee{
+		display: none;
+ 		float: left;
+ 		width: 30%;
+ 		padding-right: 20px;
+ 		padding-top: 10px;
+
+ 		font-family: $font-base;
+ 		@include font-size(12);
+ 		color: $noir;
+
+ 		&:nth-of-type(1),&:nth-of-type(2),&:last-of-type{
+ 			display: inline-block;
+ 		}
+
+ 		&:last-of-type{
+ 			width: 80px;
+ 			float: right;
+ 			padding-top: 0;
+ 			padding-right: 0;
+
+ 			// @include mq($from: mobileLandscape) {
+ 			// 	width: 20%;
+ 			// }
+ 		}
+
+ 		@include mq($from: desktop) {
+ 			width: 20%;
+ 			&:nth-of-type(n){
+ 				display: inline-block;
+ 			}
+ 		}
+
+ 		.icon{
+ 			display: block;
+			float: left;
+			width: 35px;
+			height: 35px;
+			border: $couleur_global solid 2px;
+			-webkit-border-radius: 50%;
+			-moz-border-radius: 50%;
+			border-radius: 50%;
+			color: $couleur_global;
+
+			@include transition(background-color 0.3s ease-in-out, color 0.3s ease-in-out);
+
+			&:hover{
+	 			background-color: $couleur_global;
+	 			color: $blanc;
+	 		}
+
+	 		&:first-of-type{
+	 			margin-right: 10px;
+	 		}
+ 		}
+
+	}
+}

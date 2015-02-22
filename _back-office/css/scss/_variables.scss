@@ -1,0 +1,35 @@
+html { font-size: 62.5%; }
+$font-base: "Open Sans", sans-serif;
+$font-base-2 : "Open Sans Condensed", sans-serif;
+$font-light-extra: "futurace-light";
+$font-light: "futuralt-light"; 
+$font-medium: "futuralt";
+$font-black: "futuralt-heavy";
+
+$font-size: 14;
+
+
+$color-bg:         #fff;
+$gris_fonce:       #cdd0d4;
+$gris_clair:       #e6e8ea;
+$blanc:            #fff;
+$noir:             #000;
+$couleur_global:   #480c57;
+
+$color-text:       #323131;
+
+$grid-gutter-base:    10px / 2;
+$grid-gutter-tablet:  20px / 2;
+$grid-gutter-desktop: 20px / 2;
+$grid-gutter-wide:    20px / 2;
+
+/* BREAKPOINTS */
+
+$mq-breakpoints: (
+    mobile:          320px,
+    mobileLandscape: 480px,
+    tablet:          768px,
+    desktop:         1000px,
+    wide:            1240px,
+    xwide:           1600px
+);

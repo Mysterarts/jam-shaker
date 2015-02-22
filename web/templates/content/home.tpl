@@ -8,15 +8,15 @@
 	<h1 class="titre-1">Jeux de jams</h1>
 
 	
-	<img src="img/small/A_10.gif" />
-    <img src="img/small/A_12.gif" />
-    <img src="img/small/A_13.gif" />
-    <img src="img/small/A_11.gif" />
-	<img src="img/small/A_9.gif" />
-    <img src="img/small/A_2.gif" />
-    <img src="img/small/A_6.gif" />
-    <img src="img/small/A_5.gif" />
-    <img src="img/small/A_4.gif" />
+	<img src="img/small/A_10.gif" alt="" />
+    <img src="img/small/A_12.gif" alt="" />
+    <img src="img/small/A_13.gif" alt="" />
+    <img src="img/small/A_11.gif" alt="" />
+	<img src="img/small/A_9.gif" alt="" />
+    <img src="img/small/A_2.gif" alt="" />
+    <img src="img/small/A_6.gif" alt="" />
+    <img src="img/small/A_5.gif" alt="" />
+    <img src="img/small/A_4.gif" alt="" />
     
 
 </div>

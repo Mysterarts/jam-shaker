@@ -1,0 +1,89 @@
+@font-face {
+  font-family: "responsivenav";
+  src:url("../fonts/responsivenav.eot");
+  src:url("../fonts/responsivenav.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/responsivenav.ttf") format("truetype"),
+    url("../fonts/responsivenav.woff") format("woff"),
+    url("../fonts/responsivenav.svg#responsivenav") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.nav-collapse {
+
+  @include mq($to: tablet) {
+
+    &.opened {
+      max-height: 9999px;
+    }
+
+    .js & {
+      clip: rect(0 0 0 0);
+      max-height: 0;
+      position: absolute;
+      display: block;
+      overflow: hidden;
+      zoom: 1;
+    }
+  }
+
+  @include mq($from: tablet) {
+    .js & {
+      position: relative;
+    }
+  }
+}
+
+.disable-pointer-events {
+  pointer-events: none !important;
+}
+
+.nav-toggle {
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+
+  display: block;
+  width: 100%;
+  background-color: $couleur_global;
+  font-family: $font-light;
+  text-transform: uppercase;
+  @include font-size(12);
+  color: $blanc;
+  padding: 10px;
+
+  &:before {
+    color: $blanc; /* Edit this to change the icon color */
+    font-family: "responsivenav", sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    font-size: 13px;
+    text-transform: none;
+    //position: absolute;
+    content: "≡";
+    text-indent: 0;
+    padding-right: 5px;
+    // text-align: center;
+    // line-height: 55px;
+    speak: none;
+    width: 100%;
+    top: 0;
+    left: 0;
+
+    -webkit-font-smoothing: antialiased;
+  }
+
+  &.active::before {
+    content:"x";
+  }
+
+  @include mq($from: tablet) {
+    display: none;
+  }
+}
+
